@@ -1,0 +1,36 @@
+@import "tailwindcss"; 
+
+/* Car Loading Animations */
+@keyframes carSlide {
+  0% {
+    transform: translateX(-150px);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(calc(100vw + 50px));
+    opacity: 0;
+  }
+}
+
+@keyframes road {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-carSlide {
+  animation: carSlide 5s ease-in-out infinite;
+}
+
+.animate-road {
+  animation: road 1.5s linear infinite;
+} 
