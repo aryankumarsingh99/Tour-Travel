@@ -23,7 +23,6 @@ export default function HeroSection({
 
     const playNext = () => {
       setFade(false);
-
       setTimeout(() => {
         setVideoIndex((prev) => (prev + 1) % videos.length);
         setFade(true);
@@ -31,10 +30,7 @@ export default function HeroSection({
     };
 
     video.addEventListener("ended", playNext);
-
-    return () => {
-      video.removeEventListener("ended", playNext);
-    };
+    return () => video.removeEventListener("ended", playNext);
   }, []);
 
   /* ---------- LOAD & PLAY ON INDEX CHANGE ---------- */
@@ -46,14 +42,21 @@ export default function HeroSection({
     video.load();
 
     const playPromise = video.play();
-    if (playPromise !== undefined) {
-      playPromise.catch(() => {});
-    }
+    if (playPromise !== undefined) playPromise.catch(() => {});
   }, [videoIndex]);
 
   return (
-    <section className="relative w-full h-[85vh] sm:h-[90vh] md:h-screen overflow-hidden">
-
+    <section
+      className="
+        relative w-full
+        h-[85vh] sm:h-[90vh] md:h-screen
+        overflow-hidden
+      "
+      style={{
+        paddingTop: "env(safe-area-inset-top)",
+        paddingBottom: "env(safe-area-inset-bottom)",
+      }}
+    >
       {/* VIDEO BACKGROUND */}
       <video
         ref={videoRef}
@@ -70,7 +73,17 @@ export default function HeroSection({
       <div className="absolute inset-0 bg-black/50" />
 
       {/* HERO CONTENT */}
-      <div className="relative z-10 flex flex-col justify-center h-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-white">
+      <div
+        className="
+          relative z-10
+          flex flex-col justify-center
+          h-full
+          max-w-7xl mx-auto
+          px-4 sm:px-6 md:px-8
+          text-white
+          -mt-12 sm:-mt-6 md:mt-0
+        "
+      >
         <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
           Making Every Trip <br />
           <span className="text-[#1CA8CB]">Simple, Safe & Memorable</span>
@@ -86,21 +99,24 @@ export default function HeroSection({
       <div
         className="
           absolute
-          bottom-32 sm:bottom-36 md:bottom-40
+          bottom-[22vh] sm:bottom-32 md:bottom-36
           left-1/2 -translate-x-1/2
           z-20
-          w-[95%] sm:w-[90%] md:w-auto
+          w-full
+          flex justify-center
+          px-3
         "
       >
         <div
           className="
             bg-white/95 backdrop-blur-md
             rounded-full
-            px-4 py-3
-            flex flex-wrap sm:flex-nowrap
+            px-3 sm:px-4 py-2.5
+            flex flex-wrap
             justify-center
             gap-2
             shadow-2xl
+            max-w-full
           "
         >
           {[
@@ -120,6 +136,7 @@ export default function HeroSection({
                 rounded-full
                 text-xs sm:text-sm
                 font-medium
+                whitespace-nowrap
                 transition-all duration-300
                 ${
                   activeTab === tab

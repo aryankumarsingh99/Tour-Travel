@@ -84,10 +84,10 @@ function About() {
           <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-800 to-orange-400 opacity-30" />
           <div className="relative px-4 sm:px-8 lg:px-20 pt-24 max-w-xl">
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2">
-              Discover <span className="text-orange-400">SwiftRise</span>
+              Discover <span className="text-orange-400">The World</span>
             </h1>
             <h2 className="text-sm sm:text-base md:text-lg text-gray-200 mb-3">
-              Your trusted travel partner
+              with your trusted travel partner
             </h2>
             <p className="text-gray-100 text-sm md:text-base">
               We create unforgettable journeys, connect cultures, and inspire adventure.

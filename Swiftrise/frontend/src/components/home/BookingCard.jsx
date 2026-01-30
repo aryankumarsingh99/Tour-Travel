@@ -22,14 +22,11 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   const [persons, setPersons] = useState('1');
 
   const inputStyle =
-    'w-full mt-1 px-3 py-2 text-sm bg-white border border-gray-300 rounded-lg outline-none focus:border-gray-400';
+    'w-full mt-1 px-2 py-2 text-sm bg-white border border-gray-300 rounded-lg outline-none focus:border-gray-400';
 
   /* ---------- FILTER LOGIC ---------- */
   useEffect(() => {
-    if (toLocation.trim() === '') {
-      setFilteredTo([]);
-      return;
-    }
+    if (!toLocation.trim()) return setFilteredTo([]);
     setFilteredTo(
       LOCATIONS.filter(loc =>
         loc.toLowerCase().startsWith(toLocation.toLowerCase())
@@ -38,10 +35,7 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   }, [toLocation]);
 
   useEffect(() => {
-    if (fromLocation.trim() === '') {
-      setFilteredFrom([]);
-      return;
-    }
+    if (!fromLocation.trim()) return setFilteredFrom([]);
     setFilteredFrom(
       LOCATIONS.filter(loc =>
         loc.toLowerCase().startsWith(fromLocation.toLowerCase())
@@ -50,10 +44,10 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   }, [fromLocation]);
 
   return (
-    <div className="relative -mt-24 z-20 w-[95%] max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+    <div className="relative -mt-20 sm:-mt-24 z-20 w-[95%] max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-4 sm:p-6">
 
       {/* Trip Type */}
-      <div className="flex gap-6 mb-5 text-sm font-medium">
+      <div className="flex gap-6 mb-4 text-sm font-medium">
         <span
           onClick={() => setTripType('One-Way')}
           className={`cursor-pointer pb-1 flex items-center gap-2 ${
@@ -76,10 +70,19 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
         </span>
       </div>
 
-      <div className="border-t border-gray-200 mb-5" />
+      <div className="border-t border-gray-200 mb-4" />
 
-      {/* FORM GRID */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      {/* FORM GRID — COMPACT & NO SCROLL */}
+      <div
+        className="
+          grid
+          grid-cols-2
+          gap-3
+          sm:grid-cols-2
+          md:grid-cols-3
+          lg:grid-cols-5
+        "
+      >
 
         {/* TO */}
         <div className="relative">
@@ -95,9 +98,8 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
             onBlur={() => setTimeout(() => setShowToList(false), 150)}
             className={inputStyle}
           />
-
           {showToList && filteredTo.length > 0 && (
-            <ul className="absolute z-50 bg-white border border-gray-200 rounded-lg mt-1 w-full max-h-48 overflow-y-auto shadow-lg">
+            <ul className="absolute z-50 bg-white border border-gray-200 rounded-lg mt-1 w-full max-h-40 overflow-y-auto shadow-lg">
               {filteredTo.map((loc, i) => (
                 <li
                   key={i}
@@ -128,9 +130,8 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
             onBlur={() => setTimeout(() => setShowFromList(false), 150)}
             className={inputStyle}
           />
-
           {showFromList && filteredFrom.length > 0 && (
-            <ul className="absolute z-50 bg-white border border-gray-200 rounded-lg mt-1 w-full max-h-48 overflow-y-auto shadow-lg">
+            <ul className="absolute z-50 bg-white border border-gray-200 rounded-lg mt-1 w-full max-h-40 overflow-y-auto shadow-lg">
               {filteredFrom.map((loc, i) => (
                 <li
                   key={i}
@@ -191,8 +192,8 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
       </div>
 
       {/* SEARCH */}
-      <div className="mt-6 flex justify-end">
-        <button className="px-10 py-2 rounded-full bg-[#1CA8CB] text-white font-medium shadow-md hover:opacity-90 transition">
+      <div className="mt-4 flex justify-end">
+        <button className="px-8 py-2 rounded-full bg-[#1CA8CB] text-white font-medium shadow-md hover:opacity-90 transition">
           Search
         </button>
       </div>
