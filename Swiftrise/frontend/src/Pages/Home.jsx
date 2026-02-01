@@ -10,7 +10,6 @@ import {
   ShieldCheck,
   Users,
   Quote,
-  Info,
 } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 
@@ -25,7 +24,6 @@ import Footer from "../components/home/Footer";
 import {
   destinationsData,
   londonDestinationsData,
-  reviewsData,
 } from "../data/destinationsData";
 
 /* ===================== HOME PAGE ===================== */
@@ -118,23 +116,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Beauty of Ladakh */}
+      {/* Beauty of Ladakh (PERFORMANCE FIXED) */}
       <section className="relative w-full py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600')" }}>
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600')",
+          }}
+        >
           <div className="absolute inset-0 bg-gradient-to-r from-teal-600/90 to-cyan-500/80" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center text-white">
           <div className="flex justify-center">
             <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-              <video src="/video5.mp4" autoPlay muted loop playsInline className="w-full h-full object-cover" />
+              <video
+                src="/video5.mp4"
+                muted
+                loop
+                playsInline
+                preload="none"
+                poster="/ladakh-poster.jpg"
+                onCanPlay={(e) => e.target.play()}
+                className="w-full h-full object-cover"
+              />
             </div>
           </div>
+
           <div>
             <h2 className="text-5xl font-bold mb-4">The Beauty of Ladakh</h2>
             <p className="mb-6">
-              In Ladakh, where the mountains meet the sky, every moment feels sacred.
+              In Ladakh, where the mountains meet the sky, every moment feels
+              sacred.
             </p>
             <Link to="/explore">
               <button className="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
@@ -160,34 +174,64 @@ export default function HomePage() {
 
 function RepeatCustomers() {
   const controls = useAnimation();
+
   const customers = [
-    { name: "Rahul Sharma", place: "Delhi", image: "https://randomuser.me/api/portraits/men/32.jpg", review: "Very reliable service." },
-    { name: "Anita Verma", place: "Mumbai", image: "https://randomuser.me/api/portraits/women/44.jpg", review: "Clean cars and polite drivers." },
-    { name: "Karan Singh", place: "Jaipur", image: "https://randomuser.me/api/portraits/men/56.jpg", review: "Smooth booking every time." },
-    { name: "Priya Mehta", place: "Ahmedabad", image: "https://randomuser.me/api/portraits/women/65.jpg", review: "Perfect for family trips." },
+    {
+      name: "Rahul Sharma",
+      place: "Delhi",
+      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      review: "Very reliable service.",
+    },
+    {
+      name: "Anita Verma",
+      place: "Mumbai",
+      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      review: "Clean cars and polite drivers.",
+    },
+    {
+      name: "Karan Singh",
+      place: "Jaipur",
+      image: "https://randomuser.me/api/portraits/men/56.jpg",
+      review: "Smooth booking every time.",
+    },
+    {
+      name: "Priya Mehta",
+      place: "Ahmedabad",
+      image: "https://randomuser.me/api/portraits/women/65.jpg",
+      review: "Perfect for family trips.",
+    },
   ];
 
   useEffect(() => {
     controls.start({
       x: ["0%", "-50%"],
-      transition: { repeat: Infinity, duration: 40, ease: "linear" },
+      transition: {
+        repeat: Infinity,
+        duration: 40,
+        ease: "linear",
+      },
     });
   }, [controls]);
 
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-white overflow-hidden will-change-transform">
       <h2 className="text-4xl font-bold text-center mb-14">
         Trusted by Thousands of Repeat Customers
       </h2>
 
-      <motion.div
-        className="flex gap-8 w-max px-8"
-        animate={controls}
-        
-      >
+      <motion.div className="flex gap-8 w-max px-8" animate={controls}>
         {[...customers, ...customers].map((c, i) => (
-          <div key={i} className="w-[280px] bg-white rounded-2xl shadow-lg p-6 text-center">
-            <img src={c.image} className="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-[#1CA8CB]" />
+          <div
+            key={i}
+            className="w-[280px] bg-white rounded-2xl shadow-lg p-6 text-center"
+          >
+            <img
+              src={c.image}
+              loading="lazy"
+              decoding="async"
+              className="w-20 h-20 mx-auto rounded-full mb-4 border-2 border-[#1CA8CB]"
+              alt={c.name}
+            />
             <p className="font-semibold">{c.name}</p>
             <p className="text-xs text-gray-500 mb-3">{c.place}</p>
             <Quote className="w-4 h-4 mx-auto text-[#1CA8CB] mb-2" />
@@ -205,24 +249,29 @@ function PartnersSection() {
   const partners = [
     {
       name: "CitySprint",
-      image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=400",
+      image:
+        "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=400",
       info: "Premium city transportation services.",
     },
     {
       name: "UrbanRide",
-      image: "https://images.unsplash.com/photo-1552345387-34f3c6bdcf7b?w=400",
+      image:
+        "https://images.unsplash.com/photo-1552345387-34f3c6bdcf7b?w=400",
       info: "Modern urban mobility solutions.",
     },
     {
       name: "Airport Express",
-      image: "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=400",
+      image:
+        "https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=400",
       info: "Specialized airport transfer services.",
     },
   ];
 
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden">
-      <h2 className="text-4xl font-bold text-center mb-12">Our Trusted Partners</h2>
+    <section className="py-24 bg-gray-50 overflow-hidden will-change-transform">
+      <h2 className="text-4xl font-bold text-center mb-12">
+        Our Trusted Partners
+      </h2>
 
       <div className="flex animate-scroll w-max px-8">
         {[...partners, ...partners].map((p, i) => (
@@ -252,7 +301,13 @@ function PartnerCard({ name, image, info }) {
         onClick={() => setOpen(!open)}
         className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-3xl overflow-hidden shadow-xl cursor-pointer hover:scale-105 transition"
       >
-        <img src={image} className="h-48 w-full object-cover" />
+        <img
+          src={image}
+          loading="lazy"
+          decoding="async"
+          className="h-48 w-full object-cover"
+          alt={name}
+        />
         <div className="p-5 text-white">
           <h3 className="text-xl font-bold">{name}</h3>
         </div>
@@ -266,7 +321,7 @@ function PartnerCard({ name, image, info }) {
   );
 }
 
-/* ===================== SMALL UTILS ===================== */
+/* ===================== SMALL UTIL ===================== */
 
 function Tag({ icon: Icon, text, active }) {
   return (

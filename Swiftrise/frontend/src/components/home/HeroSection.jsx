@@ -47,30 +47,26 @@ export default function HeroSection({
 
   return (
     <section
-      className="
-        relative w-full
-        h-[85vh] sm:h-[90vh] md:h-screen
-        overflow-hidden
-      "
+      className="relative w-full h-[85vh] sm:h-[90vh] md:h-screen overflow-hidden"
       style={{
         paddingTop: "env(safe-area-inset-top)",
         paddingBottom: "env(safe-area-inset-bottom)",
       }}
     >
-      {/* VIDEO BACKGROUND */}
+      {/* VIDEO BACKGROUND (NO POINTER EVENTS) */}
       <video
         ref={videoRef}
         muted
         playsInline
         preload="auto"
         autoPlay
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* DARK OVERLAY (NO POINTER EVENTS) */}
+      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
 
       {/* HERO CONTENT */}
       <div
@@ -95,16 +91,17 @@ export default function HeroSection({
         </p>
       </div>
 
-      {/* TRIP TYPE TABS */}
+      {/* TRIP TYPE TABS (POINTER EVENTS ENABLED) */}
       <div
         className="
           absolute
           bottom-[22vh] sm:bottom-32 md:bottom-36
           left-1/2 -translate-x-1/2
-          z-20
+          z-30
           w-full
           flex justify-center
           px-3
+          pointer-events-auto
         "
       >
         <div
@@ -127,6 +124,7 @@ export default function HeroSection({
           ].map((tab) => (
             <button
               key={tab}
+              type="button"
               onClick={() => {
                 setActiveTab(tab);
                 if (tab === "Multiway") onAddStop();
