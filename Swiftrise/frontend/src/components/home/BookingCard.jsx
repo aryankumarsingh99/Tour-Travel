@@ -174,7 +174,7 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
         </div>
       )}
 
-      {/* ===================== AIRPORT TRANSFER (FIXED GRID) ===================== */}
+      {/* ===================== AIRPORT TRANSFER ===================== */}
       {activeTab === "Airport Transfer" && (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
           <InputBox label="From" icon={MapPin} value={airportFrom} setValue={setAirportFrom} list={filteredAirportFrom} showList={showAirportFromList} setShowList={setShowAirportFromList} />
@@ -228,7 +228,7 @@ function InputBox({ label, icon: Icon, value, setValue, list, showList, setShowL
           setShowList(true);
         }}
         onBlur={() => setTimeout(() => setShowList(false), 150)}
-        className="w-full mt-1 px-2 py-2 text-sm border rounded-lg"
+        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#1CA8CB] focus:outline-none"
       />
       {showList && list.length > 0 && (
         <ul className="absolute z-50 w-full bg-white border rounded-lg shadow max-h-40 overflow-y-auto">
@@ -260,7 +260,7 @@ function SimpleInput({ label, icon: Icon, type = "text", value, setValue }) {
         type={type}
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="w-full mt-1 px-2 py-2 text-sm border rounded-lg"
+        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#1CA8CB] focus:outline-none"
       />
     </div>
   );
@@ -275,7 +275,7 @@ function SelectPersons({ persons, setPersons }) {
       <select
         value={persons}
         onChange={(e) => setPersons(e.target.value)}
-        className="w-full mt-1 px-2 py-2 text-sm border rounded-lg"
+        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#1CA8CB] focus:outline-none"
       >
         {[...Array(10).keys()].map((n) => (
           <option key={n + 1}>{n + 1}</option>
