@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { motion, useAnimation } from "framer-motion";
 
-import TopBar from "../components/home/TopBar";
+
 import Navigation from "../components/home/Navigation";
 import LoginModal from "../components/home/LoginModal";
 import HeroSection from "../components/home/HeroSection";
@@ -39,7 +39,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <TopBar />
+     
 
       <Navigation
         mobileMenuOpen={mobileMenuOpen}
