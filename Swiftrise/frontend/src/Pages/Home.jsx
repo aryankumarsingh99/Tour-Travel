@@ -116,48 +116,48 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Beauty of Ladakh (PERFORMANCE FIXED) */}
-      <section className="relative w-full py-24 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600')",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-teal-600/90 to-cyan-500/80" />
-        </div>
+     {/* Beauty of Ladakh (VIDEO FIXED — NO OTHER CHANGE) */}
+<section className="relative w-full py-24 overflow-hidden">
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage:
+        "url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600')",
+    }}
+  >
+    <div className="absolute inset-0 bg-gradient-to-r from-teal-600/90 to-cyan-500/80" />
+  </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center text-white">
-          <div className="flex justify-center">
-            <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
-              <video
-                src="/video5.mp4"
-                muted
-                loop
-                playsInline
-                preload="none"
-                poster="/ladakh-poster.jpg"
-                onCanPlay={(e) => e.target.play()}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
+  <div className="relative z-10 max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center text-white">
+    <div className="flex justify-center">
+      <div className="w-80 h-80 rounded-full overflow-hidden border-8 border-white shadow-2xl">
+        <video
+          src="/video5.mp4"
+          muted
+          loop
+          autoPlay
+          playsInline
+          preload="metadata"
+          poster="/ladakh-poster.jpg"
+          className="w-full h-full object-cover"
+        />
+      </div>
+    </div>
 
-          <div>
-            <h2 className="text-5xl font-bold mb-4">The Beauty of Ladakh</h2>
-            <p className="mb-6">
-              In Ladakh, where the mountains meet the sky, every moment feels
-              sacred.
-            </p>
-            <Link to="/explore">
-              <button className="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
-                Explore More
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
+    <div>
+      <h2 className="text-5xl font-bold mb-4">The Beauty of Ladakh</h2>
+      <p className="mb-6">
+        In Ladakh, where the mountains meet the sky, every moment feels
+        sacred.
+      </p>
+      <Link to="/explore">
+        <button className="bg-yellow-400 text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
+          Explore More
+        </button>
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* ===================== REPEAT CUSTOMERS ===================== */}
       <RepeatCustomers />
