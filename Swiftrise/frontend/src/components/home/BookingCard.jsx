@@ -94,7 +94,7 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   const goToCheckout = () => navigate("/checkout");
 
   return (
-    <div className="relative -mt-20 sm:-mt-24 z-20 w-[95%] max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+<div className="relative mt-8 sm:mt-10 md:mt-12 w-[95%] max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-4 sm:p-6">
 
       {/* ===================== LOCAL TRIP ===================== */}
       {activeTab === "Local Trip" && (

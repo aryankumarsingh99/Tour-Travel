@@ -20,7 +20,7 @@ import {
   CheckCircle,
   Star
 } from 'lucide-react';
-import TopBar from '../components/home/TopBar';
+
 import Navigation from '../components/home/Navigation';
 import Footer from '../components/home/Footer';
 
@@ -124,7 +124,7 @@ export default function Services() {
 
   return (
     <>
-      <TopBar />
+      
       <Navigation
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}

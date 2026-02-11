@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import TopBar from '../components/home/TopBar';
+
 import Navigation from '../components/home/Navigation';
 import Footer from '../components/home/Footer';
 import LoadingScreen from '../components/LoadingScreen';
@@ -82,7 +82,7 @@ export default function CarDetails() {
     <> 
     {loading && <LoadingScreen />}
     
-    <TopBar />
+    
     <Navigation 
       mobileMenuOpen={mobileMenuOpen}
       setMobileMenuOpen={setMobileMenuOpen}

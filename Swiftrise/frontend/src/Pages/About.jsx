@@ -11,7 +11,7 @@ import {
   CheckCircle
 } from 'lucide-react';
 
-import TopBar from '../components/home/TopBar';
+
 import Navigation from '../components/home/Navigation';
 import Footer from '../components/home/Footer';
 import LoginModal from '../components/home/LoginModal';
@@ -64,7 +64,7 @@ function About() {
 
   return (
     <>
-      <TopBar />
+      
       <Navigation
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}

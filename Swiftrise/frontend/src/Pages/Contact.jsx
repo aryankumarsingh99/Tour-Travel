@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import LoginModal from '../components/home/LoginModal';
 import Footer from '../components/home/Footer';
-import TopBar from '../components/home/TopBar';
+
 import Navigation from '../components/home/Navigation';
 import { FaCar, FaReact } from 'react-icons/fa';
 
@@ -30,7 +30,7 @@ export default function ContactUs() {
 
   return (
     <>
-      <TopBar />
+    
       <Navigation
         mobileMenuOpen={mobileMenuOpen}
         setMobileMenuOpen={setMobileMenuOpen}
