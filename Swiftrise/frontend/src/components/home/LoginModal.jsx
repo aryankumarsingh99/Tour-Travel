@@ -9,7 +9,6 @@ export default function LoginModal({
 }) {
   if (!loginModalOpen) return null;
 
-  /* ---------- TILE POSITIONS ---------- */
   const positions = [
     { x: 0, y: 0 }, { x: 160, y: 0 },
     { x: 0, y: 160 }, { x: 160, y: 160 },
@@ -27,18 +26,19 @@ export default function LoginModal({
         [next[a], next[b]] = [next[b], next[a]];
         return next;
       });
-    }, 2200); // 🔥 faster than before (was 3500)
+    }, 2200);
 
     return () => clearInterval(interval);
   }, []);
 
+  /* 🎨 UPDATED TILE COLORS */
   const tiles = [
-    { text: 'Total Care.\nTotal Different.', bg: 'bg-blue-500' },
-    { text: 'Own your power', bg: 'bg-blue-600' },
-    { text: 'Building trust\nin technology', bg: 'bg-indigo-500' },
-    { icon: '◆', bg: 'bg-indigo-600' },
-    { icon: '＋', bg: 'bg-blue-500' },
-    { icon: '⚡', bg: 'bg-blue-600' },
+    { text: 'Total Care.\nTotal Different.', bg: 'bg-[#0892D0]' },
+    { text: 'Own your power', bg: 'bg-[#4B0082]' },
+    { text: 'Building trust\nin technology', bg: 'bg-gradient-to-br from-[#0892D0] to-[#4B0082]' },
+    { icon: '◆', bg: 'bg-[#4B0082]' },
+    { icon: '＋', bg: 'bg-[#0892D0]' },
+    { icon: '⚡', bg: 'bg-gradient-to-br from-[#0892D0] to-[#4B0082]' },
   ];
 
   return (
@@ -66,7 +66,7 @@ export default function LoginModal({
                     width: 140,
                     height: 140,
                     transform: `translate(${pos.x}px, ${pos.y}px)`,
-                    transition: 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)', // 🔥 faster
+                    transition: 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
                   }}
                 >
                   {tile.text ? (
@@ -100,7 +100,7 @@ export default function LoginModal({
               </button>
             </div>
 
-            {/* LOGIN OPTIONS — AVAILABLE FOR LOGIN & SIGNUP */}
+            {/* LOGIN OPTIONS */}
             <div className="space-y-4">
               <button className="w-full py-3 rounded-full border font-semibold hover:bg-gray-50 transition flex items-center justify-center gap-2">
                 <Phone className="w-4 h-4" />
@@ -117,20 +117,20 @@ export default function LoginModal({
               </button>
             </div>
 
-            {/* EMAIL LOGIN / SIGNUP */}
+            {/* EMAIL LOGIN */}
             <div className="mt-6 space-y-4">
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#0892D0] outline-none"
               />
               <input
                 type="password"
                 placeholder="Password"
-                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[#0892D0] outline-none"
               />
 
-              <button className="w-full py-3 rounded-full text-white font-semibold bg-gradient-to-r from-blue-500 to-indigo-600 flex items-center justify-center gap-2">
+              <button className="w-full py-3 rounded-full text-white font-semibold bg-gradient-to-r from-[#0892D0] to-[#4B0082] flex items-center justify-center gap-2 shadow-lg hover:scale-105 transition-all duration-300">
                 <Mail className="w-4 h-4" />
                 {isSignup ? 'Sign Up with Email' : 'Login with Email'}
               </button>
@@ -140,11 +140,17 @@ export default function LoginModal({
           {/* FOOTER ACTION */}
           <div className="text-center text-sm mt-6">
             {isSignup ? (
-              <button onClick={() => setIsSignup(false)} className="text-blue-600">
+              <button
+                onClick={() => setIsSignup(false)}
+                className="text-[#0892D0] font-medium"
+              >
                 Already have an account? Login
               </button>
             ) : (
-              <button onClick={() => setIsSignup(true)} className="text-blue-600">
+              <button
+                onClick={() => setIsSignup(true)}
+                className="text-[#0892D0] font-medium"
+              >
                 Don’t have an account? Sign Up
               </button>
             )}
@@ -152,7 +158,6 @@ export default function LoginModal({
         </div>
       </div>
 
-      {/* FONT */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
       `}</style>

@@ -100,7 +100,7 @@ export default function CarDetails() {
               <button
                 key={item}
                 className="px-3 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 hover:scale-110 active:scale-95 text-white shadow-lg hover:shadow-xl"
-                style={{ backgroundColor: '#1CA8CB' }}
+                style={{ backgroundColor: '#3F00FF' }}
               >
                 {item}
               </button>
@@ -367,10 +367,10 @@ export default function CarDetails() {
               </div>
 
               <button 
-                onClick={() => navigate('/checkout')}
-                className="mt-6 md:mt-8 w-full bg-gradient-to-r from-[#1CA8CB] to-[#1CA8CB] py-2.5 md:py-3 rounded-full font-semibold text-sm md:text-base hover:from-green-400 hover:to-cyan-400 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 text-gray-800">
-                BOOK NOW
-              </button>
+  onClick={() => navigate('/checkout')}
+  className="mt-6 md:mt-8 w-full bg-gradient-to-r from-[#3F00FF] to-[#1CA8CB] py-2.5 md:py-3 rounded-full font-semibold text-sm md:text-base hover:from-green-400 hover:to-cyan-400 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 text-white">
+  BOOK NOW
+</button>
             </div>
 
           </div>

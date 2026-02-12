@@ -15,7 +15,10 @@ import { LOCATIONS } from "../../data/locations";
 export default function BookingCard({ tripType, setTripType, activeTab }) {
   const navigate = useNavigate();
 
-  /* ===================== LOCAL TRIP ===================== */
+  /* ================= SAFE DEFAULT ================= */
+  const currentTab = activeTab || "Local Trip";
+
+  /* ================= LOCAL TRIP ================= */
   const [toLocation, setToLocation] = useState("");
   const [fromLocation, setFromLocation] = useState("");
   const [filteredTo, setFilteredTo] = useState([]);
@@ -26,7 +29,7 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   const [depTime, setDepTime] = useState("");
   const [persons, setPersons] = useState("1");
 
-  /* ===================== AIRPORT TRANSFER ===================== */
+  /* ================= AIRPORT ================= */
   const [airportFrom, setAirportFrom] = useState("");
   const [airportName, setAirportName] = useState("");
   const [airportDate, setAirportDate] = useState("");
@@ -34,7 +37,7 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   const [filteredAirportFrom, setFilteredAirportFrom] = useState([]);
   const [showAirportFromList, setShowAirportFromList] = useState(false);
 
-  /* ===================== MULTIWAY ===================== */
+  /* ================= MULTIWAY ================= */
   const [multiFrom, setMultiFrom] = useState("");
   const [stop1, setStop1] = useState("");
   const [stop2, setStop2] = useState("");
@@ -49,7 +52,12 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   const [showStop1List, setShowStop1List] = useState(false);
   const [showStop2List, setShowStop2List] = useState(false);
 
-  /* ===================== FILTER ===================== */
+  /* ================= TAXI ================= */
+  const [selectedTaxiPackage, setSelectedTaxiPackage] = useState(null);
+
+  /* ================= ROUND TRIP ================= */
+  const [selectedRoundTrip, setSelectedRoundTrip] = useState(null);
+
   const filter = (value, setter) => {
     if (!value.trim()) return setter([]);
     setter(
@@ -66,11 +74,8 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   useEffect(() => filter(stop1, setFilteredStop1), [stop1]);
   useEffect(() => filter(stop2, setFilteredStop2), [stop2]);
 
-  /* ===================== ROUND TRIP ===================== */
-  const [selectedRoundTrip, setSelectedRoundTrip] = useState(null);
-
   const showRoundTrips =
-    activeTab === "Local Trip" &&
+    currentTab === "Local Trip" &&
     tripType === "Round-Trip" &&
     toLocation &&
     fromLocation &&
@@ -84,7 +89,6 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
     { id: 4, depart: "07:15 PM", return: "06:00 AM", price: "₹5,300" },
   ];
 
-  /* ===================== TAXI PACKAGES ===================== */
   const taxiPackages = [
     { id: 1, name: "4 Hours / 40 KM", price: "₹1,499" },
     { id: 2, name: "8 Hours / 80 KM", price: "₹2,699" },
@@ -93,33 +97,43 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
 
   const goToCheckout = () => navigate("/checkout");
 
-  return (
-<div className="relative mt-8 sm:mt-10 md:mt-12 w-[95%] max-w-7xl mx-auto bg-white rounded-2xl shadow-xl p-4 sm:p-6">
+  const cardStyle = (selected) =>
+    `rounded-2xl p-5 cursor-pointer transition-all duration-300
+     ${
+       selected
+         ? "bg-gradient-to-br from-[#0892D0]/15 to-[#4B0082]/15 shadow-xl scale-105"
+         : "bg-gray-50 hover:shadow-md hover:scale-[1.02]"
+     }`;
 
-      {/* ===================== LOCAL TRIP ===================== */}
-      {activeTab === "Local Trip" && (
+  return (
+    <div className="w-[95%] max-w-7xl mx-auto bg-white rounded-3xl shadow-xl p-8 mt-12">
+
+      {/* ================= LOCAL TRIP ================= */}
+      {currentTab === "Local Trip" && (
         <>
-          <div className="flex gap-6 mb-4 text-sm font-medium">
+          <div className="flex gap-8 mb-6 text-sm font-semibold">
             <span
               onClick={() => setTripType("One-Way")}
-              className={`cursor-pointer pb-1 flex items-center gap-1 ${
+              className={`cursor-pointer pb-2 ${
                 tripType === "One-Way"
-                  ? "text-orange-500 border-b-2 border-orange-500"
-                  : "text-gray-500"
+                  ? "text-[#4B0082] border-b-2 border-[#4B0082]"
+                  : "text-gray-400"
               }`}
             >
-              <ArrowRight className="w-4 h-4" /> One-Way
+              <ArrowRight className="inline w-4 h-4 mr-1" />
+              One-Way
             </span>
 
             <span
               onClick={() => setTripType("Round-Trip")}
-              className={`cursor-pointer pb-1 flex items-center gap-1 ${
+              className={`cursor-pointer pb-2 ${
                 tripType === "Round-Trip"
-                  ? "text-orange-500 border-b-2 border-orange-500"
-                  : "text-gray-500"
+                  ? "text-[#4B0082] border-b-2 border-[#4B0082]"
+                  : "text-gray-400"
               }`}
             >
-              <ArrowLeftRight className="w-4 h-4" /> Round-Trip
+              <ArrowLeftRight className="inline w-4 h-4 mr-1" />
+              Round-Trip
             </span>
           </div>
 
@@ -132,22 +146,18 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
           </FormGrid>
 
           {showRoundTrips && (
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
               {roundTripOptions.map(opt => (
                 <div
                   key={opt.id}
                   onClick={() => setSelectedRoundTrip(opt.id)}
-                  className={`border rounded-lg p-3 cursor-pointer transition ${
-                    selectedRoundTrip === opt.id
-                      ? "border-[#1CA8CB] bg-[#EAF7FB] shadow"
-                      : "hover:shadow"
-                  }`}
+                  className={cardStyle(selectedRoundTrip === opt.id)}
                 >
                   <div className="flex justify-between text-sm">
                     <span>{opt.depart}</span>
                     <span>{opt.return}</span>
                   </div>
-                  <div className="text-right font-semibold text-[#1CA8CB]">
+                  <div className="text-right font-semibold text-[#4B0082] mt-2">
                     {opt.price}
                   </div>
                 </div>
@@ -157,35 +167,36 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
         </>
       )}
 
-      {/* ===================== TAXI PACKAGES ===================== */}
-      {activeTab === "Taxi Packages" && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      {/* ================= TAXI ================= */}
+      {currentTab === "Taxi Packages" && (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {taxiPackages.map(pkg => (
-            <div key={pkg.id} className="border rounded-xl p-4 flex flex-col justify-between hover:shadow transition">
-              <div>
-                <h3 className="font-semibold">{pkg.name}</h3>
-                <p className="text-[#1CA8CB] font-bold mt-2">{pkg.price}</p>
-              </div>
-              <button onClick={goToCheckout} className="mt-4 bg-[#1CA8CB] text-white py-2 rounded-full">
-                Book Now
-              </button>
+            <div
+              key={pkg.id}
+              onClick={() => setSelectedTaxiPackage(pkg.id)}
+              className={cardStyle(selectedTaxiPackage === pkg.id)}
+            >
+              <h3 className="font-semibold text-lg">{pkg.name}</h3>
+              <p className="text-[#4B0082] font-bold mt-3 text-xl">
+                {pkg.price}
+              </p>
             </div>
           ))}
         </div>
       )}
 
-      {/* ===================== AIRPORT TRANSFER ===================== */}
-      {activeTab === "Airport Transfer" && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3">
+      {/* ================= AIRPORT ================= */}
+      {currentTab === "Airport Transfer" && (
+        <FormGrid>
           <InputBox label="From" icon={MapPin} value={airportFrom} setValue={setAirportFrom} list={filteredAirportFrom} showList={showAirportFromList} setShowList={setShowAirportFromList} />
           <SimpleInput label="Airport Name" icon={Plane} value={airportName} setValue={setAirportName} />
           <SimpleInput label="Date" icon={Calendar} type="date" value={airportDate} setValue={setAirportDate} />
           <SimpleInput label="Time" icon={Clock} type="time" value={airportTime} setValue={setAirportTime} />
-        </div>
+        </FormGrid>
       )}
 
-      {/* ===================== MULTIWAY ===================== */}
-      {activeTab === "Multiway" && (
+      {/* ================= MULTIWAY ================= */}
+      {currentTab === "Multiway" && (
         <FormGrid>
           <InputBox label="From" icon={MapPin} value={multiFrom} setValue={setMultiFrom} list={filteredMultiFrom} showList={showMultiFromList} setShowList={setShowMultiFromList} />
           <InputBox label="Stop 1" icon={Route} value={stop1} setValue={setStop1} list={filteredStop1} showList={showStop1List} setShowList={setShowStop1List} />
@@ -195,9 +206,12 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
         </FormGrid>
       )}
 
-      {/* ===================== BOOK NOW ===================== */}
-      <div className="mt-4 flex justify-end">
-        <button onClick={goToCheckout} className="px-8 py-2 bg-[#1CA8CB] text-white rounded-full">
+      {/* BOOK NOW */}
+      <div className="mt-10 flex justify-end">
+        <button
+          onClick={goToCheckout}
+          className="px-10 py-3 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+        >
           Book Now
         </button>
       </div>
@@ -205,11 +219,11 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
   );
 }
 
-/* ===================== HELPERS ===================== */
+/* ================= HELPERS ================= */
 
 function FormGrid({ children }) {
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
       {children}
     </div>
   );
@@ -219,7 +233,7 @@ function InputBox({ label, icon: Icon, value, setValue, list, showList, setShowL
   return (
     <div className="relative">
       <label className="text-xs flex items-center gap-1 text-gray-500">
-        <Icon className="w-3 h-3" /> {label}
+        <Icon className="w-3 h-3 text-[#4B0082]" /> {label}
       </label>
       <input
         value={value}
@@ -228,7 +242,7 @@ function InputBox({ label, icon: Icon, value, setValue, list, showList, setShowL
           setShowList(true);
         }}
         onBlur={() => setTimeout(() => setShowList(false), 150)}
-        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#1CA8CB] focus:outline-none"
+        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#4B0082] focus:outline-none"
       />
       {showList && list.length > 0 && (
         <ul className="absolute z-50 w-full bg-white border rounded-lg shadow max-h-40 overflow-y-auto">
@@ -254,13 +268,13 @@ function SimpleInput({ label, icon: Icon, type = "text", value, setValue }) {
   return (
     <div>
       <label className="text-xs flex items-center gap-1 text-gray-500">
-        <Icon className="w-3 h-3" /> {label}
+        <Icon className="w-3 h-3 text-[#4B0082]" /> {label}
       </label>
       <input
         type={type}
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#1CA8CB] focus:outline-none"
+        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#4B0082] focus:outline-none"
       />
     </div>
   );
@@ -270,12 +284,12 @@ function SelectPersons({ persons, setPersons }) {
   return (
     <div>
       <label className="text-xs flex items-center gap-1 text-gray-500">
-        <Users className="w-3 h-3" /> Persons
+        <Users className="w-3 h-3 text-[#4B0082]" /> Persons
       </label>
       <select
         value={persons}
         onChange={(e) => setPersons(e.target.value)}
-        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#1CA8CB] focus:outline-none"
+        className="w-full mt-1 px-1 py-2 text-sm bg-transparent border-0 border-b border-gray-300 focus:border-[#4B0082] focus:outline-none"
       >
         {[...Array(10).keys()].map((n) => (
           <option key={n + 1}>{n + 1}</option>

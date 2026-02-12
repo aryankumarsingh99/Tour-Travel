@@ -16,7 +16,6 @@ export default function HeroSection({
   const [videoIndex, setVideoIndex] = useState(0);
   const [fade, setFade] = useState(true);
 
-  /* ---------- INFINITE VIDEO LOOP ---------- */
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -33,70 +32,52 @@ export default function HeroSection({
     return () => video.removeEventListener("ended", playNext);
   }, []);
 
-  /* ---------- LOAD & PLAY ON INDEX CHANGE ---------- */
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     video.src = videos[videoIndex];
     video.load();
-
-    const playPromise = video.play();
-    if (playPromise !== undefined) playPromise.catch(() => {});
+    video.play().catch(() => {});
   }, [videoIndex]);
 
   return (
-    <section
-      className="relative w-full min-h-screen overflow-hidden"
-      style={{
-        paddingTop: "env(safe-area-inset-top)",
-        paddingBottom: "env(safe-area-inset-bottom)",
-      }}
-    >
-      {/* VIDEO BACKGROUND */}
+    <section className="relative w-full min-h-[85vh] md:min-h-[90vh] overflow-hidden">
+
+      {/* VIDEO ONLY (NO OVERLAY) */}
       <video
         ref={videoRef}
         muted
         playsInline
-        preload="auto"
         autoPlay
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 pointer-events-none ${
+        preload="auto"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
-
-      {/* CONTENT WRAPPER */}
-      <div className="relative z-10 flex flex-col justify-center min-h-screen max-w-7xl mx-auto px-4 sm:px-6 md:px-8 text-white">
+      {/* CONTENT */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-32 md:pt-40">
 
         {/* HERO TEXT */}
-        <div className="max-w-3xl">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+        <div className="max-w-4xl">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
             Making Every Trip <br />
-            <span className="text-[#1CA8CB]">Simple, Safe & Memorable</span>
+            <span className="bg-gradient-to-r from-[#0892D0] to-[#4B0082] bg-clip-text text-transparent">
+              Simple, Safe & Memorable
+            </span>
           </h1>
 
-          <p className="max-w-2xl text-sm sm:text-base md:text-lg text-white/90">
+          <p className="text-white/90 text-lg md:text-xl max-w-2xl mx-auto drop-shadow-md">
             Discover the world comfortably through expertly planned rides that
             focus on safety, convenience, and unforgettable memories.
           </p>
         </div>
 
-        {/* TABS — FLOW BASED (NO OVERLAP POSSIBLE) */}
-        <div className="mt-10 flex justify-center pointer-events-auto">
-          <div
-            className="
-              bg-white/95 backdrop-blur-md
-              rounded-full
-              px-3 sm:px-4 py-2.5
-              flex flex-wrap
-              justify-center
-              gap-2
-              shadow-2xl
-            "
-          >
+        {/* TABS — PUSHED DOWN NEAR BOOKING CARD */}
+        <div className="mt-24 md:mt-28 lg:mt-32 w-full flex justify-center">
+          <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-4 py-3 flex flex-wrap gap-3 justify-center shadow-2xl">
+
             {[
               "Local Trip",
               "Taxi Packages",
@@ -105,30 +86,23 @@ export default function HeroSection({
             ].map((tab) => (
               <button
                 key={tab}
-                type="button"
                 onClick={() => {
                   setActiveTab(tab);
                   if (tab === "Multiway") onAddStop();
                 }}
-                className={`
-                  px-4 sm:px-6 py-2
-                  rounded-full
-                  text-xs sm:text-sm
-                  font-medium
-                  whitespace-nowrap
-                  transition-all duration-300
-                  ${
-                    activeTab === tab
-                      ? "bg-[#1CA8CB] text-white shadow-md scale-105"
-                      : "text-gray-600 hover:bg-gray-100"
-                  }
-                `}
+                className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                  activeTab === tab
+                    ? "bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white shadow-lg scale-105"
+                    : "text-white hover:bg-white/20"
+                }`}
               >
                 {tab}
               </button>
             ))}
+
           </div>
         </div>
+
       </div>
     </section>
   );

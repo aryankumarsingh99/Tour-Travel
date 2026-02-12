@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { User } from 'lucide-react';
 import { TfiAlignJustify } from 'react-icons/tfi';
+import logo from '../../assets/logo.png';
 
 export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLoginModalOpen }) {
   const location = useLocation();
@@ -11,11 +12,13 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
 
   const getLinkClasses = (path) => {
     const baseClasses =
-      "flex items-center justify-center px-4 py-2 text-sm rounded-md transition-colors duration-200";
+      "flex items-center justify-center px-4 py-2 text-sm rounded-md transition-all duration-300";
+
     if (isActive(path)) {
-      return `${baseClasses} text-blue-600 font-semibold border-b-2 border-blue-600`;
+      return `${baseClasses} bg-gradient-to-r from-[#0892D0] to-[#4B0082] bg-clip-text text-transparent font-semibold border-b-2 border-[#0892D0]`;
     }
-    return `${baseClasses} text-gray-600 font-medium`;
+
+    return `${baseClasses} text-gray-600 font-medium hover:text-[#0892D0]`;
   };
 
   return (
@@ -23,19 +26,18 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
       <nav className="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
         <div className="w-full px-10 py-4 flex items-center justify-between">
 
-          {/* LOGO */}
+          {/* LOGO SECTION */}
           <div
             onClick={() => navigate('/')}
             className="flex items-center gap-3 cursor-pointer"
           >
-            <div
-              className="w-8 h-8 rounded-lg"
-              style={{
-                backgroundColor: '#1CA8CB',
-                boxShadow: '0 2px 6px rgba(0,0,0,0.1)',
-              }}
-            ></div>
-            <span className="text-xl font-bold" style={{ color: '#1CA8CB' }}>
+            <img
+              src={logo}
+              alt="Jai Guru Travels Logo"
+              className="w-12 h-12 object-contain"
+            />
+
+            <span className="text-xl font-bold bg-gradient-to-r from-[#0892D0] to-[#4B0082] bg-clip-text text-transparent">
               Jai Guru Travels
             </span>
           </div>
@@ -57,11 +59,10 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
             <Link to="/contact" className={getLinkClasses('/contact')}>Contact</Link>
           </div>
 
-          {/* LOGIN */}
+          {/* LOGIN BUTTON */}
           <button
             onClick={() => setLoginModalOpen(true)}
-            className="hidden md:flex items-center justify-center px-6 py-2 rounded-full text-sm font-medium shadow-sm"
-            style={{ backgroundColor: '#1CA8CB', color: 'white' }}
+            className="hidden md:flex items-center justify-center px-6 py-2 rounded-full text-sm font-medium shadow-md bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white hover:scale-105 transition-all duration-300"
           >
             <User className="w-4 h-4 mr-2" />
             Login
@@ -80,8 +81,7 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
 
               <button
                 onClick={() => setLoginModalOpen(true)}
-                className="w-full px-6 py-2 rounded-full text-sm font-medium shadow-sm"
-                style={{ backgroundColor: '#1CA8CB', color: 'white' }}
+                className="w-full px-6 py-2 rounded-full text-sm font-medium bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white shadow-md"
               >
                 <User className="w-4 h-4 inline mr-2" />
                 Login
