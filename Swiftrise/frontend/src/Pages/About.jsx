@@ -118,7 +118,7 @@ function About() {
           </div>
         </section>
 
-        {/* OUR STORY (RESTORED + ANIMATED) */}
+        {/* OUR STORY */}
         <section className="max-w-7xl mx-auto px-6 py-24">
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
@@ -146,7 +146,7 @@ function About() {
             <img
               src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=600&h=700&fit=crop"
               alt="Our Story"
-              className="rounded-3xl shadow-2xl w-full max-w-md mx-auto transition-all duration-700 hover:scale-105 hover:shadow-3xl"
+              className="rounded-3xl shadow-2xl w-full max-w-md mx-auto transition-all duration-700 hover:scale-105"
             />
           </div>
         </section>
@@ -198,7 +198,7 @@ function About() {
                   <h3 className="font-semibold text-lg text-gray-900 transition group-hover:text-[#4B0082]">
                     {member.name}
                   </h3>
-                  <p className="text-[#0892D0] text-sm mb-2 transition group-hover:scale-105">
+                  <p className="text-[#0892D0] text-sm mb-2">
                     {member.role}
                   </p>
                   <p className="text-gray-600 text-sm">
@@ -207,21 +207,6 @@ function About() {
                 </div>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* CTA */}
-        <section className="py-24 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white text-center">
-          <div className="max-w-3xl mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-6 transition duration-500 hover:scale-105">
-              Ready to Start Your Adventure?
-            </h2>
-            <p className="mb-8 text-lg text-white/90">
-              Join thousands of travelers who trust SwiftRise.
-            </p>
-            <button className="bg-white text-[#4B0082] px-10 py-4 rounded-full font-bold transition-all duration-500 hover:scale-110 hover:shadow-2xl hover:shadow-white/40">
-              Get in Touch
-            </button>
           </div>
         </section>
 
@@ -259,7 +244,7 @@ function StatCard({ Icon, value, label }) {
 
   return (
     <div className="bg-white rounded-2xl shadow-xl p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-105">
-      <Icon className="w-8 h-8 mx-auto mb-3 text-[#4B0082] transition duration-500 hover:rotate-12 hover:scale-110" />
+      <Icon className="w-8 h-8 mx-auto mb-3 text-[#4B0082]" />
       <div className="text-2xl font-bold text-gray-900">
         {count.toLocaleString()}+
       </div>
@@ -271,7 +256,7 @@ function StatCard({ Icon, value, label }) {
 function Feature({ text }) {
   return (
     <div className="flex items-center gap-3 text-gray-700 transition duration-300 hover:translate-x-2">
-      <CheckCircle className="w-5 h-5 text-[#0892D0] transition duration-300 hover:scale-110" />
+      <CheckCircle className="w-5 h-5 text-[#0892D0]" />
       {text}
     </div>
   );

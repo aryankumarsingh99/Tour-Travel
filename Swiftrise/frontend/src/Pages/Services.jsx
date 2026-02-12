@@ -253,21 +253,6 @@ export default function Services() {
           </div>
         </section>
 
-        {/* CTA */}
-        <section className="py-28 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white text-center">
-          <div className="max-w-3xl mx-auto px-6">
-            <h2 className="text-4xl font-bold mb-6">
-              Ready to Book Your Trip?
-            </h2>
-            <p className="mb-8 text-lg text-white/90">
-              Let SwiftRise take care of everything.
-            </p>
-            <button className="bg-white text-[#4B0082] px-10 py-4 rounded-full font-bold hover:scale-105 transition">
-              Contact Us
-            </button>
-          </div>
-        </section>
-
       </div>
 
       <Footer />
