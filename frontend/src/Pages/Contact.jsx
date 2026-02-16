@@ -75,8 +75,8 @@ export default function ContactUs() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="inline-flex items-center gap-1.5 md:gap-2 mb-4 md:mb-6 bg-white/10 backdrop-blur-md px-3 md:px-5 py-1.5 md:py-2.5 rounded-full border border-white/20 shadow-lg"
             >
-              <span className="w-1.5 md:w-2 h-1.5 md:h-2 bg-green-400 rounded-full animate-pulse"></span>
-              <span className="text-[10px] md:text-sm font-medium tracking-wide">Available 24/7</span>
+              <span className="w-2 md:w-2 h-2 md:h-2 bg-green-400 rounded-full animate-pulse"></span>
+              <span className="text-xs md:text-sm font-medium tracking-wide">Available 24/7</span>
             </motion.div>
 
             {/* Main Heading */}
@@ -117,8 +117,8 @@ export default function ContactUs() {
                     <span className="text-base md:text-2xl">📞</span>
                   </div>
                   <div className="text-left">
-                    <p className="text-[9px] md:text-xs text-white/70 font-medium">Call Us</p>
-                    <p className="text-[10px] md:text-sm font-semibold">+91 98765 43210</p>
+                    <p className="text-xs md:text-xs text-white/70 font-medium">Call Us</p>
+                    <p className="text-xs md:text-sm font-semibold">+91 98765 43210</p>
                   </div>
                 </div>
               </div>
@@ -129,8 +129,8 @@ export default function ContactUs() {
                     <span className="text-base md:text-2xl">📧</span>
                   </div>
                   <div className="text-left">
-                    <p className="text-[9px] md:text-xs text-white/70 font-medium">Email Us</p>
-                    <p className="text-[10px] md:text-sm font-semibold">travel.inquiry@example.com</p>
+                    <p className="text-xs md:text-xs text-white/70 font-medium">Email Us</p>
+                    <p className="text-xs md:text-sm font-semibold">travel.inquiry@example.com</p>
                   </div>
                 </div>
               </div>
@@ -141,8 +141,8 @@ export default function ContactUs() {
                     <span className="text-base md:text-2xl">⏰</span>
                   </div>
                   <div className="text-left">
-                    <p className="text-[9px] md:text-xs text-white/70 font-medium">Response Time</p>
-                    <p className="text-[10px] md:text-sm font-semibold">Within 24 Hours</p>
+                    <p className="text-xs md:text-xs text-white/70 font-medium">Response Time</p>
+                    <p className="text-xs md:text-sm font-semibold">Within 24 Hours</p>
                   </div>
                 </div>
               </div>
@@ -180,7 +180,7 @@ export default function ContactUs() {
           {/* Icon Badge */}
           <div className="inline-flex items-center gap-1.5 md:gap-2 mb-3 md:mb-4 bg-white/10 backdrop-blur-sm px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/20">
             <FaReact className="text-sm md:text-xl animate-spin-slow" />
-            <span className="text-[10px] md:text-xs font-medium tracking-wide">24/7 Support</span>
+            <span className="text-xs md:text-xs font-medium tracking-wide">24/7 Support</span>
           </div>
 
           <h2 className="text-xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 leading-tight">
@@ -189,25 +189,25 @@ export default function ContactUs() {
             <span className="text-white/90">Next Adventure</span>
           </h2>
           
-          <p className="text-[11px] md:text-sm leading-relaxed text-white/85 mb-4 md:mb-6">
+          <p className="text-xs md:text-sm leading-relaxed text-white/85 mb-4 md:mb-6">
           Whether you're dreaming of a tropical escape, cultural exploration, or thrilling adventure, 
           our expert team is here to craft your perfect journey. We respond within 24 hours to help 
           bring your travel dreams to life.
         </p>
 
           {/* Feature List */}
-          <div className="space-y-1.5 md:space-y-2 mb-4 md:mb-6">
+          <div className="space-y-2 md:space-y-2 mb-4 md:mb-6">
             <div className="flex items-center gap-2 text-white/90">
-              <div className="w-1 h-1 bg-white rounded-full"></div>
-              <span className="text-[10px] md:text-sm">Personalized Travel Planning</span>
+              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+              <span className="text-xs md:text-sm">Personalized Travel Planning</span>
             </div>
             <div className="flex items-center gap-2 text-white/90">
-              <div className="w-1 h-1 bg-white rounded-full"></div>
-              <span className="text-[10px] md:text-sm">Best Price Guarantee</span>
+              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+              <span className="text-xs md:text-sm">Best Price Guarantee</span>
             </div>
             <div className="flex items-center gap-2 text-white/90">
-              <div className="w-1 h-1 bg-white rounded-full"></div>
-              <span className="text-[10px] md:text-sm">Expert Travel Consultants</span>
+              <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
+              <span className="text-xs md:text-sm">Expert Travel Consultants</span>
             </div>
           </div>
 
@@ -217,8 +217,8 @@ export default function ContactUs() {
               <FaCar className="text-base md:text-2xl" />
             </div>
             <div>
-              <p className="text-[9px] md:text-xs text-white/70">Premium Fleet Available</p>
-              <p className="text-[10px] md:text-sm font-semibold">Airport & City Transfers</p>
+              <p className="text-xs md:text-xs text-white/70">Premium Fleet Available</p>
+              <p className="text-xs md:text-sm font-semibold">Airport & City Transfers</p>
             </div>
           </div>
         </div>
@@ -230,8 +230,8 @@ export default function ContactUs() {
               <span className="text-base md:text-xl">📧</span>
             </div>
             <div>
-              <p className="text-[9px] md:text-xs text-white/70 uppercase tracking-wider font-medium">Email Us</p>
-              <p className="text-[10px] md:text-sm font-semibold">travel.inquiry@example.com</p>
+              <p className="text-xs md:text-xs text-white/70 uppercase tracking-wider font-medium">Email Us</p>
+              <p className="text-xs md:text-sm font-semibold">travel.inquiry@example.com</p>
             </div>
           </div>
           
@@ -240,8 +240,8 @@ export default function ContactUs() {
               <span className="text-base md:text-xl">📞</span>
             </div>
             <div>
-              <p className="text-[9px] md:text-xs text-white/70 uppercase tracking-wider font-medium">Call Us</p>
-              <p className="text-[10px] md:text-sm font-semibold">+91 98765 43210</p>
+              <p className="text-xs md:text-xs text-white/70 uppercase tracking-wider font-medium">Call Us</p>
+              <p className="text-xs md:text-sm font-semibold">+91 98765 43210</p>
             </div>
           </div>
         </div>
@@ -259,7 +259,7 @@ export default function ContactUs() {
       >
         <div className="mb-4 md:mb-6">
           <div className="inline-block px-2 md:px-3 py-0.5 md:py-1 bg-gradient-to-r from-[#0892D0]/10 to-[#4B0082]/10 rounded-full mb-2 md:mb-3">
-            <span className="text-[10px] md:text-xs font-semibold bg-gradient-to-r from-[#0892D0] to-[#4B0082] bg-clip-text text-transparent">
+            <span className="text-xs md:text-xs font-semibold bg-gradient-to-r from-[#0892D0] to-[#4B0082] bg-clip-text text-transparent">
               Get in Touch
             </span>
           </div>
@@ -360,7 +360,7 @@ export default function ContactUs() {
             </svg>
           </button>
 
-          <p className="text-center text-[10px] md:text-xs text-gray-500">
+          <p className="text-center text-xs md:text-xs text-gray-500">
             🔒 Your information is safe and secure
           </p>
         </form>

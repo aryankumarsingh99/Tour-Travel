@@ -357,47 +357,47 @@ export default function Explore() {
                   onClick={() => setSelectedDestination(dest)}
                   className="bg-white rounded-lg md:rounded-2xl shadow-md md:shadow-lg overflow-hidden hover:shadow-2xl transition duration-300 cursor-pointer"
                 >
-                  <div className="relative h-32 md:h-56 overflow-hidden">
+                  <div className="relative h-40 md:h-56 overflow-hidden">
                     <img
                       src={dest.image}
                       alt={dest.name}
                       className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
                     />
                     <div className="absolute top-1 md:top-3 right-1 md:right-3 bg-white px-1.5 md:px-3 py-0.5 md:py-1 rounded-full flex items-center gap-0.5 md:gap-1 shadow-lg">
-                      <Star className="w-2.5 md:w-4 h-2.5 md:h-4 fill-yellow-400 text-yellow-400" />
-                      <span className="font-semibold text-[9px] md:text-sm">{dest.rating}</span>
+                      <Star className="w-3.5 md:w-4 h-3.5 md:h-4 fill-yellow-400 text-yellow-400" />
+                      <span className="font-semibold text-xs md:text-sm">{dest.rating}</span>
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 md:p-4">
                       <h3 className="text-white font-bold text-sm md:text-xl">{dest.name}</h3>
-                      <p className="text-white/90 text-[9px] md:text-sm flex items-center gap-1">
-                        <MapPin className="w-2 md:w-3 h-2 md:h-3" />
+                      <p className="text-white/90 text-xs md:text-sm flex items-center gap-1">
+                        <MapPin className="w-3 md:w-3 h-3 md:h-3" />
                         {dest.location}
                       </p>
                     </div>
                   </div>
 
                   <div className="p-2 md:p-6">
-                    <p className="text-gray-600 text-[10px] md:text-sm mb-2 md:mb-4 line-clamp-2">{dest.description}</p>
+                    <p className="text-gray-600 text-xs md:text-sm mb-2 md:mb-4 line-clamp-2">{dest.description}</p>
                     
-                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4 text-[9px] md:text-sm text-gray-600">
+                    <div className="flex items-center gap-2 md:gap-4 mb-2 md:mb-4 text-xs md:text-sm text-gray-600">
                       <div className="flex items-center gap-0.5 md:gap-1">
-                        <Clock className="w-2.5 md:w-4 h-2.5 md:h-4 text-[#0892D0]" />
+                        <Clock className="w-3.5 md:w-4 h-3.5 md:h-4 text-[#0892D0]" />
                         <span>{dest.duration}</span>
                       </div>
                       <div className="font-bold text-[#4B0082]">{dest.price}</div>
                     </div>
                     
                     <div className="mb-2 md:mb-4">
-                      <h4 className="font-semibold text-[10px] md:text-sm text-gray-900 mb-1 md:mb-2">Top Attractions:</h4>
-                      <div className="space-y-0.5 md:space-y-2">
+                      <h4 className="font-semibold text-xs md:text-sm text-gray-900 mb-1 md:mb-2">Top Attractions:</h4>
+                      <div className="space-y-1 md:space-y-2">
                         {dest.attractions.slice(0, 3).map((attr, i) => (
-                          <div key={i} className="text-[8px] md:text-xs text-gray-600 flex items-start gap-1 md:gap-2">
-                            <MapPin className="w-2 md:w-3 h-2 md:h-3 text-[#0892D0] shrink-0 mt-0.5" />
+                          <div key={i} className="text-xs md:text-xs text-gray-600 flex items-start gap-1 md:gap-2">
+                            <MapPin className="w-3 md:w-3 h-3 md:h-3 text-[#0892D0] shrink-0 mt-0.5" />
                             <span className="line-clamp-1">{attr}</span>
                           </div>
                         ))}
                         {dest.attractions.length > 3 && (
-                          <p className="text-[8px] md:text-xs text-[#0892D0] font-semibold">
+                          <p className="text-xs md:text-xs text-[#0892D0] font-semibold">
                             +{dest.attractions.length - 3} more
                           </p>
                         )}
@@ -410,7 +410,7 @@ export default function Explore() {
                           e.stopPropagation();
                           setSelectedDestination(dest);
                         }}
-                        className="flex-1 px-2 md:px-4 py-1 md:py-2 bg-gray-100 text-gray-700 rounded-full font-semibold text-[9px] md:text-sm hover:bg-gray-200 transition"
+                        className="flex-1 px-2 md:px-4 py-1 md:py-2 bg-gray-100 text-gray-700 rounded-full font-semibold text-xs md:text-sm hover:bg-gray-200 transition"
                       >
                         Details
                       </button>
@@ -419,7 +419,7 @@ export default function Explore() {
                           e.stopPropagation();
                           handleBooking(dest);
                         }}
-                        className="flex-1 px-2 md:px-4 py-1 md:py-2 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-[9px] md:text-sm hover:shadow-lg hover:scale-105 transition"
+                        className="flex-1 px-2 md:px-4 py-1 md:py-2 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-xs md:text-sm hover:shadow-lg hover:scale-105 transition"
                       >
                         Book
                       </button>
@@ -471,7 +471,7 @@ export default function Explore() {
                       />
                       <div className="absolute top-2 md:top-3 right-2 md:right-3 bg-white px-2 md:px-3 py-1 md:py-1.5 rounded-full flex items-center gap-1 shadow-lg">
                         <Star className="w-3 md:w-4 h-3 md:h-4 fill-yellow-400 text-yellow-400" />
-                        <span className="font-bold text-[10px] md:text-sm">{dest.rating}</span>
+                        <span className="font-bold text-xs md:text-sm">{dest.rating}</span>
                       </div>
                     </div>
 
@@ -480,33 +480,33 @@ export default function Explore() {
                       <div className="flex flex-wrap items-start justify-between mb-2 md:mb-3">
                         <div>
                           <h3 className="text-base md:text-2xl font-bold text-gray-900 mb-0.5 md:mb-1">{dest.name}</h3>
-                          <p className="text-gray-600 text-[10px] md:text-base flex items-center gap-1 md:gap-2">
+                          <p className="text-gray-600 text-xs md:text-base flex items-center gap-1 md:gap-2">
                             <MapPin className="w-3 md:w-4 h-3 md:h-4 text-[#0892D0]" />
                             {dest.location}
                           </p>
                         </div>
                         <div className="text-right">
-                          <div className="text-[#4B0082] font-bold text-[10px] md:text-lg">{dest.price}</div>
-                          <div className="text-gray-500 text-[8px] md:text-sm flex items-center gap-1">
-                            <Clock className="w-2.5 md:w-4 h-2.5 md:h-4" />
+                          <div className="text-[#4B0082] font-bold text-xs md:text-lg">{dest.price}</div>
+                          <div className="text-gray-500 text-xs md:text-sm flex items-center gap-1">
+                            <Clock className="w-3 md:w-4 h-3 md:h-4" />
                             {dest.duration}
                           </div>
                         </div>
                       </div>
 
-                      <p className="text-gray-600 text-[10px] md:text-base mb-2 md:mb-4 leading-relaxed line-clamp-2 md:line-clamp-none">
+                      <p className="text-gray-600 text-xs md:text-base mb-2 md:mb-4 leading-relaxed line-clamp-2 md:line-clamp-none">
                         {dest.description}
                       </p>
 
                       {/* Attractions - Compact Grid */}
                       <div className="mb-2 md:mb-4">
-                        <h4 className="font-semibold text-[10px] md:text-base text-gray-900 mb-1 md:mb-2 flex items-center gap-1 md:gap-2">
+                        <h4 className="font-semibold text-xs md:text-base text-gray-900 mb-1 md:mb-2 flex items-center gap-1 md:gap-2">
                           <MapPin className="w-3 md:w-4 h-3 md:h-4 text-[#0892D0]" />
                           Top Attractions
                         </h4>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-1 md:gap-2">
                           {dest.attractions.map((attr, i) => (
-                            <div key={i} className="flex items-start gap-1 md:gap-2 text-[9px] md:text-sm text-gray-700 bg-gray-50 rounded p-1 md:p-2">
+                            <div key={i} className="flex items-start gap-1 md:gap-2 text-xs md:text-sm text-gray-700 bg-gray-50 rounded p-1 md:p-2">
                               <span className="text-[#0892D0] font-bold">{i + 1}.</span>
                               <span className="line-clamp-1">{attr}</span>
                             </div>
@@ -520,7 +520,7 @@ export default function Explore() {
                             e.stopPropagation();
                             setSelectedDestination(dest);
                           }}
-                          className="px-3 md:px-6 py-1 md:py-2 bg-white border-2 border-[#0892D0] text-[#0892D0] rounded-full font-semibold text-[10px] md:text-sm hover:bg-blue-50 transition"
+                          className="px-3 md:px-6 py-1 md:py-2 bg-white border-2 border-[#0892D0] text-[#0892D0] rounded-full font-semibold text-xs md:text-sm hover:bg-blue-50 transition"
                         >
                           Details
                         </button>
@@ -529,7 +529,7 @@ export default function Explore() {
                             e.stopPropagation();
                             handleBooking(dest);
                           }}
-                          className="px-3 md:px-6 py-1 md:py-2 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-[10px] md:text-sm hover:shadow-lg hover:scale-105 transition"
+                          className="px-3 md:px-6 py-1 md:py-2 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-xs md:text-sm hover:shadow-lg hover:scale-105 transition"
                         >
                           Book Now
                         </button>
@@ -642,7 +642,7 @@ export default function Explore() {
                 {/* Description */}
                 <div className="mb-3 md:mb-6">
                   <h3 className="text-sm md:text-xl font-bold text-gray-900 mb-1 md:mb-2">About {selectedDestination.name}</h3>
-                  <p className="text-[10px] md:text-base text-gray-600 leading-relaxed">{selectedDestination.description}</p>
+                  <p className="text-xs md:text-base text-gray-600 leading-relaxed">{selectedDestination.description}</p>
                   
                   <div className="flex items-center gap-4 mt-3 md:mt-4 text-sm md:text-base">
                     <div className="flex items-center gap-2 text-[#4B0082] font-bold">
@@ -670,10 +670,10 @@ export default function Explore() {
                         transition={{ delay: index * 0.05 }}
                         className="flex items-start gap-1.5 md:gap-3 p-1.5 md:p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg hover:shadow-md transition"
                       >
-                        <div className="bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full w-5 md:w-8 h-5 md:h-8 flex items-center justify-center shrink-0 font-bold text-[9px] md:text-sm">
+                        <div className="bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full w-5 md:w-8 h-5 md:h-8 flex items-center justify-center shrink-0 font-bold text-xs md:text-sm">
                           {index + 1}
                         </div>
-                        <p className="text-gray-700 text-[9px] md:text-base pt-0.5 md:pt-1">{attr}</p>
+                        <p className="text-gray-700 text-xs md:text-base pt-0.5 md:pt-1">{attr}</p>
                       </motion.div>
                     ))}
                   </div>
@@ -683,12 +683,12 @@ export default function Explore() {
                 <div className="mt-4 md:mt-8 flex flex-col sm:flex-row gap-2 md:gap-3">
                   <button 
                     onClick={() => handleBooking(selectedDestination)}
-                    className="flex-1 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-[10px] md:text-base hover:shadow-lg hover:scale-105 transition flex items-center justify-center gap-1 md:gap-2"
+                    className="flex-1 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-xs md:text-base hover:shadow-lg hover:scale-105 transition flex items-center justify-center gap-1 md:gap-2"
                   >
                     <Calendar className="w-3 md:w-5 h-3 md:h-5" />
                     Book This Trip
                   </button>
-                  <button className="flex-1 px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#0892D0] text-[#0892D0] rounded-full font-semibold text-[10px] md:text-base hover:bg-blue-50 transition flex items-center justify-center gap-1 md:gap-2">
+                  <button className="flex-1 px-4 md:px-6 py-2 md:py-3 bg-white border-2 border-[#0892D0] text-[#0892D0] rounded-full font-semibold text-xs md:text-base hover:bg-blue-50 transition flex items-center justify-center gap-1 md:gap-2">
                     <Phone className="w-3 md:w-5 h-3 md:h-5" />
                     Contact Us
                   </button>
@@ -726,7 +726,7 @@ export default function Explore() {
                   <X className="w-4 md:w-5 h-4 md:h-5" />
                 </button>
                 <h2 className="text-lg md:text-3xl font-bold mb-1 md:mb-2">Book Your Trip</h2>
-                <p className="text-white/90 flex items-center gap-1 md:gap-2 text-[10px] md:text-base">
+                <p className="text-white/90 flex items-center gap-1 md:gap-2 text-xs md:text-base">
                   <MapPin className="w-3 md:w-4 h-3 md:h-4" />
                   {bookingDestination.name} - {bookingDestination.location}
                 </p>
@@ -737,7 +737,7 @@ export default function Explore() {
                 {/* Personal Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                   <div>
-                    <label className="block text-[10px] md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Full Name *
                     </label>
                     <input
@@ -746,12 +746,12 @@ export default function Explore() {
                       value={bookingData.name}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-[10px] md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
+                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-xs md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
                       placeholder="Enter your name"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Email Address *
                     </label>
                     <input
@@ -760,7 +760,7 @@ export default function Explore() {
                       value={bookingData.email}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-[10px] md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
+                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-xs md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -768,7 +768,7 @@ export default function Explore() {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                   <div>
-                    <label className="block text-[10px] md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Phone Number *
                     </label>
                     <input
@@ -777,12 +777,12 @@ export default function Explore() {
                       value={bookingData.phone}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-[10px] md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
+                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-xs md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
                       placeholder="+91 1234567890"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Number of Travelers *
                     </label>
                     <input
@@ -793,7 +793,7 @@ export default function Explore() {
                       min="1"
                       max="20"
                       required
-                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-[10px] md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
+                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-xs md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
                     />
                   </div>
                 </div>
@@ -801,7 +801,7 @@ export default function Explore() {
                 {/* Travel Dates */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4">
                   <div>
-                    <label className="block text-[10px] md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       Start Date *
                     </label>
                     <input
@@ -811,11 +811,11 @@ export default function Explore() {
                       onChange={handleInputChange}
                       required
                       min={new Date().toISOString().split('T')[0]}
-                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-[10px] md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
+                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-xs md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
                     />
                   </div>
                   <div>
-                    <label className="block text-[10px] md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
+                    <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                       End Date *
                     </label>
                     <input
@@ -825,21 +825,21 @@ export default function Explore() {
                       onChange={handleInputChange}
                       required
                       min={bookingData.startDate || new Date().toISOString().split('T')[0]}
-                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-[10px] md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
+                      className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-xs md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
                     />
                   </div>
                 </div>
 
                 {/* Accommodation Type */}
                 <div>
-                  <label className="block text-[10px] md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
+                  <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                     Accommodation Preference *
                   </label>
                   <select
                     name="accommodation"
                     value={bookingData.accommodation}
                     onChange={handleInputChange}
-                    className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-[10px] md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
+                    className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-xs md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition"
                   >
                     <option value="budget">Budget (3-Star Hotels)</option>
                     <option value="standard">Standard (4-Star Hotels)</option>
@@ -850,7 +850,7 @@ export default function Explore() {
 
                 {/* Special Requests */}
                 <div>
-                  <label className="block text-[10px] md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
+                  <label className="block text-xs md:text-sm font-semibold text-gray-700 mb-1 md:mb-2">
                     Special Requests / Message
                   </label>
                   <textarea
@@ -858,7 +858,7 @@ export default function Explore() {
                     value={bookingData.message}
                     onChange={handleInputChange}
                     rows="2"
-                    className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-[10px] md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition resize-none"
+                    className="w-full px-2 md:px-4 py-1.5 md:py-2.5 text-xs md:text-base border-2 border-gray-200 rounded-lg focus:border-[#0892D0] focus:outline-none transition resize-none"
                     placeholder="Any special requirements?"
                   />
                 </div>
@@ -867,7 +867,7 @@ export default function Explore() {
                 <div className="flex flex-col sm:flex-row gap-2 md:gap-3 pt-2 md:pt-4">
                   <button
                     type="submit"
-                    className="flex-1 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-[10px] md:text-base hover:shadow-lg hover:scale-105 transition flex items-center justify-center gap-1 md:gap-2"
+                    className="flex-1 px-4 md:px-6 py-2 md:py-3 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-xs md:text-base hover:shadow-lg hover:scale-105 transition flex items-center justify-center gap-1 md:gap-2"
                   >
                     <CheckCircle className="w-3 md:w-5 h-3 md:h-5" />
                     Submit Request
@@ -875,13 +875,13 @@ export default function Explore() {
                   <button
                     type="button"
                     onClick={() => setBookingModalOpen(false)}
-                    className="px-4 md:px-6 py-2 md:py-3 bg-gray-100 text-gray-700 rounded-full font-semibold text-[10px] md:text-base hover:bg-gray-200 transition"
+                    className="px-4 md:px-6 py-2 md:py-3 bg-gray-100 text-gray-700 rounded-full font-semibold text-xs md:text-base hover:bg-gray-200 transition"
                   >
                     Cancel
                   </button>
                 </div>
 
-                <p className="text-[8px] md:text-xs text-gray-500 text-center mt-2 md:mt-4">
+                <p className="text-xs md:text-xs text-gray-500 text-center mt-2 md:mt-4">
                   * Our team will contact you within 24 hours
                 </p>
               </form>

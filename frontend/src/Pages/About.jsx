@@ -161,16 +161,14 @@ function About() {
             <div className="space-y-3 md:space-y-12">
               {milestones.map((m, i) => (
                 <div
-                  key={i}
-                  className="bg-white rounded-lg md:rounded-2xl shadow-md md:shadow-lg p-2 md:p-8 border-l-2 md:border-l-4 border-[#0892D0] transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-[#4B0082]"
-                >
-                  <div className="text-sm md:text-2xl font-bold text-[#4B0082] mb-0.5 md:mb-2">
+                <div className="bg-white rounded-lg md:rounded-2xl shadow-md md:shadow-xl p-3 md:p-8 border-l-2 md:border-l-4 border-[#0892D0] transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-[#4B0082]">
+                  <div className="text-sm md:text-2xl font-bold text-[#4B0082] mb-1 md:mb-2">
                     {m.year}
                   </div>
-                  <h3 className="text-xs md:text-xl font-semibold mb-0.5 md:mb-2">
+                  <h3 className="text-xs md:text-xl font-semibold mb-1 md:mb-2">
                     {m.event}
                   </h3>
-                  <p className="text-[9px] md:text-base text-gray-600">{m.description}</p>
+                  <p className="text-xs md:text-base text-gray-600">{m.description}</p>
                 </div>
               ))}
             </div>
@@ -211,20 +209,20 @@ function StatCard({ Icon, value, label }) {
   }, [value]);
 
   return (
-    <div className="bg-white rounded-lg md:rounded-2xl shadow-md md:shadow-xl p-2 md:p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-105">
-      <Icon className="w-5 md:w-8 h-5 md:h-8 mx-auto mb-1 md:mb-3 text-[#4B0082]" />
-      <div className="text-sm md:text-2xl font-bold text-gray-900">
+    <div className="bg-white rounded-lg md:rounded-2xl shadow-md md:shadow-xl p-3 md:p-6 text-center transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:scale-105">
+      <Icon className="w-6 md:w-8 h-6 md:h-8 mx-auto mb-2 md:mb-3 text-[#4B0082]" />
+      <div className="text-xl md:text-2xl font-bold text-gray-900">
         {count.toLocaleString()}+
       </div>
-      <div className="text-[8px] md:text-sm text-gray-600">{label}</div>
+      <div className="text-xs md:text-sm text-gray-600">{label}</div>
     </div>
   );
 }
 
 function Feature({ text }) {
   return (
-    <div className="flex items-center gap-1.5 md:gap-3 text-[9px] md:text-base text-gray-700 transition duration-300 hover:translate-x-2">
-      <CheckCircle className="w-3 md:w-5 h-3 md:h-5 text-[#0892D0]" />
+    <div className="flex items-center gap-2 md:gap-3 text-xs md:text-base text-gray-700 transition duration-300 hover:translate-x-2">
+      <CheckCircle className="w-4 md:w-5 h-4 md:h-5 text-[#0892D0]" />
       {text}
     </div>
   );

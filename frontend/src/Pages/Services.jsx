@@ -163,7 +163,7 @@ export default function Services() {
             <h1 className="text-xl md:text-6xl font-extrabold mb-2 md:mb-6">
               Our Services
             </h1>
-            <p className="text-[10px] md:text-xl text-white/80 mb-4 md:mb-8">
+            <p className="text-sm md:text-xl text-white/80 mb-4 md:mb-8">
               From flights to curated experiences, we handle everything so you can travel stress-free.
             </p>
             
@@ -222,9 +222,9 @@ export default function Services() {
                     key={i}
                     className="bg-white/90 backdrop-blur-lg border border-white/40 rounded-lg md:rounded-2xl shadow-md md:shadow-xl p-1.5 md:p-6 text-center hover:shadow-2xl hover:-translate-y-2 transition duration-300"
                   >
-                    <Icon className="w-3 md:w-8 h-3 md:h-8 mx-auto mb-0.5 md:mb-3 text-[#4B0082]" />
-                    <div className="text-[8px] md:text-base font-semibold text-gray-900">{b.title}</div>
-                    <div className="text-[7px] md:text-sm text-gray-600">{b.description}</div>
+                    <Icon className="w-4 md:w-8 h-4 md:h-8 mx-auto mb-1 md:mb-3 text-[#4B0082]" />
+                    <div className="text-xs md:text-base font-semibold text-gray-900">{b.title}</div>
+                    <div className="text-xs md:text-sm text-gray-600">{b.description}</div>
                   </div>
                 );
               })}
@@ -237,10 +237,10 @@ export default function Services() {
           <h2 className="text-lg md:text-4xl font-bold text-center mb-2 md:mb-4 text-[#4B0082]">
             What We Offer
           </h2>
-          <p className="text-center text-gray-600 text-[9px] md:text-lg mb-1 md:mb-3 max-w-4xl mx-auto font-semibold">
+          <p className="text-center text-gray-600 text-xs md:text-lg mb-2 md:mb-3 max-w-4xl mx-auto font-semibold">
             Comprehensive travel solutions designed to make your journey seamless and memorable
           </p>
-          <p className="text-center text-gray-500 text-[8px] md:text-base mb-4 md:mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-center text-gray-500 text-xs md:text-base mb-4 md:mb-12 max-w-3xl mx-auto leading-relaxed">
             Whether you're planning a family vacation, business trip, romantic getaway, or solo adventure, 
             we provide end-to-end travel services with competitive pricing, expert guidance, and 24/7 support. 
             From budget-friendly options to luxury experiences, we've got the perfect package for every traveler.
@@ -255,24 +255,24 @@ export default function Services() {
                   className="group bg-white rounded-lg md:rounded-3xl shadow-md md:shadow-xl hover:-translate-y-3 hover:shadow-2xl transition duration-300 overflow-hidden relative"
                 >
                   {service.popular && (
-                    <div className="absolute top-0.5 md:top-5 right-0.5 md:right-5 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white text-[7px] md:text-xs px-1 md:px-3 py-0.5 md:py-1 rounded-full shadow-lg">
+                    <div className="absolute top-1 md:top-5 right-1 md:right-5 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white text-xs md:text-xs px-2 md:px-3 py-1 rounded-full shadow-lg">
                       Popular
                     </div>
                   )}
 
-                  <div className="p-1.5 md:p-8">
-                    <Icon className="w-4 md:w-10 h-4 md:h-10 text-[#4B0082] mb-0.5 md:mb-5 group-hover:scale-110 transition duration-300" />
-                    <h3 className="font-bold text-[10px] md:text-lg mb-0.5 md:mb-3 line-clamp-1">{service.title}</h3>
-                    <p className="text-[8px] md:text-sm text-gray-600 mb-1 md:mb-6 line-clamp-2">{service.description}</p>
+                  <div className="p-2 md:p-8">
+                    <Icon className="w-6 md:w-10 h-6 md:h-10 text-[#4B0082] mb-1 md:mb-5 group-hover:scale-110 transition duration-300" />
+                    <h3 className="font-bold text-sm md:text-lg mb-1 md:mb-3 line-clamp-1">{service.title}</h3>
+                    <p className="text-xs md:text-sm text-gray-600 mb-2 md:mb-6 line-clamp-2">{service.description}</p>
 
-                    <div className="font-bold text-[10px] md:text-xl mb-1 md:mb-6 text-[#4B0082]">
+                    <div className="font-bold text-sm md:text-xl mb-2 md:mb-6 text-[#4B0082]">
                       {service.price}
                     </div>
 
-                    <div className="space-y-0.5 md:space-y-3">
+                    <div className="space-y-1 md:space-y-3">
                       {service.features.map((f, idx) => (
-                        <div key={idx} className="flex items-center gap-0.5 md:gap-2 text-[7px] md:text-sm text-gray-600">
-                          <CheckCircle className="w-2 md:w-4 h-2 md:h-4 text-[#0892D0] flex-shrink-0" />
+                        <div key={idx} className="flex items-center gap-1 md:gap-2 text-xs md:text-sm text-gray-600">
+                          <CheckCircle className="w-3 md:w-4 h-3 md:h-4 text-[#0892D0] flex-shrink-0" />
                           <span className="line-clamp-1">{f}</span>
                         </div>
                       ))}
@@ -301,12 +301,12 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-center text-gray-600 text-[9px] md:text-base mb-3 md:mb-8"
+              className="text-center text-gray-600 text-xs md:text-base mb-3 md:mb-8"
             >
               Real experiences from travelers who trusted us
             </motion.p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6">
               {testimonials.map((t, i) => (
                 <motion.div 
                   key={i}
@@ -324,41 +324,41 @@ export default function Services() {
                     scale: 1.02,
                     transition: { duration: 0.3 }
                   }}
-                  className="relative bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 rounded-xl md:rounded-3xl shadow-lg md:shadow-xl p-2 md:p-6 hover:shadow-2xl transition duration-300 border border-white/60 backdrop-blur-sm overflow-hidden"
+                  className="relative bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 rounded-xl md:rounded-3xl shadow-lg md:shadow-xl p-3 md:p-6 hover:shadow-2xl transition duration-300 border border-white/60 backdrop-blur-sm overflow-hidden"
                 >
                   {/* Decorative Quote Icon Background */}
-                  <div className="absolute top-0.5 md:top-3 right-0.5 md:right-3 text-5xl md:text-8xl text-[#0892D0]/5 font-serif select-none pointer-events-none">
+                  <div className="absolute top-1 md:top-3 right-1 md:right-3 text-5xl md:text-8xl text-[#0892D0]/5 font-serif select-none pointer-events-none">
                     "
                   </div>
                   
                   {/* Rating Stars at Top */}
-                  <div className="flex gap-0.5 md:gap-1 mb-1.5 md:mb-3 relative z-10">
+                  <div className="flex gap-1 md:gap-1 mb-2 md:mb-3 relative z-10">
                     {[...Array(t.rating)].map((_, j) => (
-                      <Star key={j} className="w-2.5 md:w-5 h-2.5 md:h-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />
+                      <Star key={j} className="w-3 md:w-5 h-3 md:h-5 fill-yellow-400 text-yellow-400 drop-shadow-sm" />
                     ))}
                   </div>
 
                   {/* Comment with Quote Styling */}
-                  <p className="text-gray-700 text-[9px] md:text-base leading-relaxed mb-2 md:mb-4 relative z-10 line-clamp-3 md:line-clamp-none">
+                  <p className="text-gray-700 text-xs md:text-base leading-relaxed mb-3 md:mb-4 relative z-10 line-clamp-3 md:line-clamp-none">
                     <span className="text-base md:text-2xl text-[#0892D0] font-serif">"</span>
                     {t.comment}
                     <span className="text-base md:text-2xl text-[#0892D0] font-serif">"</span>
                   </p>
 
                   {/* Profile Section with Gradient Border */}
-                  <div className="flex items-center gap-1.5 md:gap-3 pt-1.5 md:pt-3 border-t-2 border-gradient-to-r from-[#0892D0]/20 via-[#4B0082]/20 to-transparent relative z-10">
+                  <div className="flex items-center gap-2 md:gap-3 pt-2 md:pt-3 border-t-2 border-gradient-to-r from-[#0892D0]/20 via-[#4B0082]/20 to-transparent relative z-10">
                     <div className="relative">
                       <div className="absolute inset-0 bg-gradient-to-r from-[#0892D0] to-[#4B0082] rounded-full blur-sm opacity-50"></div>
                       <img
                         src={t.image}
                         alt={t.name}
-                        className="relative w-7 md:w-14 h-7 md:h-14 rounded-full object-cover border-2 md:border-4 border-white shadow-lg"
+                        className="relative w-10 md:w-14 h-10 md:h-14 rounded-full object-cover border-2 md:border-4 border-white shadow-lg"
                       />
                     </div>
                     <div>
-                      <div className="text-[9px] md:text-base font-bold text-gray-900">{t.name}</div>
-                      <div className="text-[7px] md:text-sm text-gray-600 flex items-center gap-0.5 md:gap-1">
-                        <svg className="w-2 md:w-3 h-2 md:h-3 text-[#0892D0]" fill="currentColor" viewBox="0 0 20 20">
+                      <div className="text-xs md:text-base font-bold text-gray-900">{t.name}</div>
+                      <div className="text-xs md:text-sm text-gray-600 flex items-center gap-1">
+                        <svg className="w-3 h-3 text-[#0892D0]" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                         </svg>
                         {t.location}
@@ -367,7 +367,7 @@ export default function Services() {
                   </div>
 
                   {/* Verified Badge */}
-                  <div className="absolute bottom-1.5 md:bottom-3 right-1.5 md:right-3 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white text-[7px] md:text-xs px-1.5 md:px-2.5 py-0.5 md:py-1 rounded-full shadow-lg flex items-center gap-0.5 md:gap-1">
+                  <div className="absolute bottom-2 md:bottom-3 right-2 md:right-3 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white text-xs md:text-xs px-2 md:px-2.5 py-1 rounded-full shadow-lg flex items-center gap-1">
                     <CheckCircle className="w-2 md:w-3 h-2 md:h-3" />
                     <span className="font-semibold">Verified</span>
                   </div>

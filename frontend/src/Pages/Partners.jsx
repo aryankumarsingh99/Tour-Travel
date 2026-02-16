@@ -41,10 +41,10 @@ const PartnerCard = ({ name, image, info }) => {
           }`}
         >
           <div className="bg-blue-900/95 backdrop-blur-sm p-3 sm:p-6 border-t border-white/10">
-            <p className="text-white/90 text-[10px] sm:text-sm leading-relaxed mb-2 md:mb-3">
+            <p className="text-white/90 text-xs sm:text-sm leading-relaxed mb-2 md:mb-3">
               {info}
             </p>
-            <div className="flex items-center justify-between text-[9px] sm:text-xs text-white/70">
+            <div className="flex items-center justify-between text-xs sm:text-xs text-white/70">
               <span>⭐ 4.8 Rating</span>
               <span>🚗 500+ Vehicles</span>
             </div>
@@ -126,7 +126,7 @@ export default function Partners() {
           <h1 className="text-xl sm:text-4xl md:text-5xl font-bold mb-2 md:mb-4">
             Our Trusted Partners
           </h1>
-          <p className="max-w-3xl mx-auto text-[10px] sm:text-base md:text-lg">
+          <p className="max-w-3xl mx-auto text-xs sm:text-base md:text-lg">
             Reliable transport providers ensuring comfort and safety.
           </p>
         </div>

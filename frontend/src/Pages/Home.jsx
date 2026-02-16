@@ -73,12 +73,12 @@ export default function HomePage() {
             explore curated travel experiences designed for comfort and adventure.
           </p>
 
-          <p className="text-gray-500 max-w-3xl mx-auto mb-4 md:mb-6 text-[10px] md:text-base">
+          <p className="text-gray-500 max-w-3xl mx-auto mb-4 md:mb-6 text-xs md:text-base">
             Whether you're seeking relaxation on pristine beaches, excitement in bustling cities, 
             or tranquility in mountain retreats, we offer personalized journeys that cater to every traveler's dream.
           </p>
 
-          <p className="text-gray-500 max-w-2xl mx-auto mb-6 md:mb-10 text-[9px] md:text-sm italic">
+          <p className="text-gray-500 max-w-2xl mx-auto mb-6 md:mb-10 text-sm md:text-sm italic">
             Experience the world with trusted guides, comfortable transportation, and seamless service 
             that transforms every trip into a cherished memory. Your adventure awaits!
           </p>
@@ -143,7 +143,7 @@ export default function HomePage() {
             tradition meets tranquility, and every journey becomes a story worth telling.
           </p>
 
-          <p className="max-w-2xl mb-6 md:mb-8 text-[10px] md:text-sm drop-shadow-md italic opacity-90">
+          <p className="max-w-2xl mb-6 md:mb-8 text-sm md:text-sm drop-shadow-md italic opacity-90">
             Join us on an adventure through landscapes that inspire wonder and cultural encounters 
             that enrich the soul. From sunrise over snow-capped peaks to starlit nights in the 
             wilderness, this is travel at its most transformative.
@@ -359,18 +359,18 @@ function RepeatCustomers() {
               
               {/* Customer Info */}
               <h3 className="font-bold text-xs text-gray-800 mb-0.5">{c.name}</h3>
-              <p className="text-[9px] text-gray-500 mb-1.5 flex items-center justify-center gap-0.5">
-                <MapPin className="w-2 h-2" />
+              <p className="text-xs text-gray-500 mb-1.5 flex items-center justify-center gap-0.5">
+                <MapPin className="w-2.5 h-2.5" />
                 {c.place}
               </p>
               
               {/* Quote Icon */}
               <div className="mb-1">
-                <Quote className="w-3 h-3 mx-auto text-[#4B0082] opacity-20" />
+                <Quote className="w-3.5 h-3.5 mx-auto text-[#4B0082] opacity-20" />
               </div>
               
               {/* Review */}
-              <p className="text-[9px] text-gray-700 leading-snug italic">"{c.review}"</p>
+              <p className="text-xs text-gray-700 leading-snug italic">"{c.review}"</p>
               
               {/* Star Rating */}
               <div className="flex justify-center gap-0.5 mt-1.5">
@@ -612,33 +612,33 @@ function PartnersSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                 
                 {/* Partner Badge */}
-                <div className="absolute top-2 right-2 bg-white/95 backdrop-blur-sm px-2 py-0.5 rounded-full flex items-center gap-0.5 shadow-lg">
-                  <ShieldCheck className="w-3 h-3 text-[#0892D0]" />
-                  <span className="text-[8px] font-semibold text-gray-700">Verified</span>
+                <div className="absolute top-2 right-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full flex items-center gap-1 shadow-lg">
+                  <ShieldCheck className="w-3.5 h-3.5 text-[#0892D0]" />
+                  <span className="text-xs font-semibold text-gray-700">Verified</span>
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-2.5">
                 {/* Partner Name */}
-                <h3 className="text-xs font-bold text-gray-800 mb-0.5">{p.name}</h3>
+                <h3 className="text-sm font-bold text-gray-800 mb-1">{p.name}</h3>
                 
                 {/* Description */}
-                <p className="text-[9px] text-gray-600 mb-1.5 line-clamp-2">
+                <p className="text-xs text-gray-600 mb-2 line-clamp-2">
                   Premium travel services.
                 </p>
                 
                 {/* Rating & Stats */}
-                <div className="flex items-center justify-between pt-1.5 border-t border-gray-100">
-                  <div className="flex items-center gap-0.5">
+                <div className="flex items-center justify-between pt-2 border-t border-gray-100">
+                  <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, idx) => (
-                      <Star key={idx} className="w-2.5 h-2.5 fill-yellow-400 text-yellow-400" />
+                      <Star key={idx} className="w-3 h-3 fill-yellow-400 text-yellow-400" />
                     ))}
-                    <span className="text-[9px] font-semibold text-gray-700 ml-0.5">5.0</span>
+                    <span className="text-xs font-semibold text-gray-700 ml-1">5.0</span>
                   </div>
-                  <div className="flex items-center gap-0.5 text-gray-500">
-                    <Users className="w-2.5 h-2.5" />
-                    <span className="text-[8px] font-medium">500+</span>
+                  <div className="flex items-center gap-1 text-gray-500">
+                    <Users className="w-3 h-3" />
+                    <span className="text-xs font-medium">500+</span>
                   </div>
                 </div>
               </div>

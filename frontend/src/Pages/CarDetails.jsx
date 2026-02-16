@@ -99,7 +99,7 @@ export default function CarDetails() {
             {["Sedan", "SUV", "MINI", "Other"].map((item) => (
               <button
                 key={item}
-                className="px-3 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-[9px] md:text-sm font-medium transition-all duration-300 hover:scale-110 active:scale-95 text-white shadow-lg hover:shadow-xl"
+                className="px-3 md:px-5 lg:px-6 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all duration-300 hover:scale-110 active:scale-95 text-white shadow-lg hover:shadow-xl"
                 style={{ backgroundColor: '#3F00FF' }}
               >
                 {item}
@@ -130,9 +130,9 @@ export default function CarDetails() {
           <div className="lg:col-span-2 bg-white rounded-2xl lg:rounded-[26px] p-5 md:p-6 lg:p-8 shadow-lg lg:shadow-xl hover:shadow-lg lg:hover:shadow-2xl transition-all duration-300 border border-gray-100">
 
             {/* META */}
-            <div className="flex gap-3 md:gap-6 lg:gap-10 text-[9px] md:text-sm font-medium mb-4 md:mb-5 lg:mb-6 flex-wrap">
+            <div className="flex gap-3 md:gap-6 lg:gap-10 text-xs md:text-sm font-medium mb-4 md:mb-5 lg:mb-6 flex-wrap">
               <div className="flex items-center gap-1 px-2 md:px-3 py-1 rounded-full hover:shadow-md transition-all duration-300 hover:scale-105">
-                <Star className="w-3 md:w-4 h-3 md:h-4" /> 4.9
+                <Star className="w-3.5 md:w-4 h-3.5 md:h-4" /> 4.9
               </div>
               <div className="flex items-center gap-1 px-2 md:px-3 py-1 rounded-full hover:shadow-md transition-all duration-300 hover:scale-105">
                 <MapPin className="w-4 h-4" /> 400 miles
@@ -197,61 +197,61 @@ export default function CarDetails() {
             </div>
 
             {/* CAR RENTAL FEATURES */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-[9px] md:text-sm">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-xs md:text-sm">
               <div className="p-3 rounded-xl hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <Shield className="w-4 md:w-5 h-4 md:h-5" />
                 <div>
                   <p className="font-semibold text-gray-800">Insurance</p>
-                  <p className="text-gray-500 text-[8px] md:text-xs">Included</p>
+                  <p className="text-gray-500 text-xs md:text-xs">Included</p>
                 </div>
               </div>
               <div className="p-3 rounded-xl hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <MapPin className="w-4 md:w-5 h-4 md:h-5" />
                 <div>
                   <p className="font-semibold text-gray-800">GPS</p>
-                  <p className="text-gray-500 text-[8px] md:text-xs">Navigation</p>
+                  <p className="text-gray-500 text-xs md:text-xs">Navigation</p>
                 </div>
               </div>
               <div className="p-3 rounded-xl hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <Bluetooth className="w-4 md:w-5 h-4 md:h-5" />
                 <div>
                   <p className="font-semibold text-gray-800">Bluetooth</p>
-                  <p className="text-gray-500 text-[8px] md:text-xs">Connectivity</p>
+                  <p className="text-gray-500 text-xs md:text-xs">Connectivity</p>
                 </div>
               </div>
               <div className="p-3 rounded-xl hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <Zap className="w-4 md:w-5 h-4 md:h-5" />
                 <div>
                   <p className="font-semibold text-gray-800">USB Port</p>
-                  <p className="text-gray-500 text-[8px] md:text-xs">Charging</p>
+                  <p className="text-gray-500 text-xs md:text-xs">Charging</p>
                 </div>
               </div>
               <div className="p-3 rounded-xl hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <Wind className="w-4 md:w-5 h-4 md:h-5" />
                 <div>
                   <p className="font-semibold text-gray-800">AC</p>
-                  <p className="text-gray-500 text-[8px] md:text-xs">Climate Control</p>
+                  <p className="text-gray-500 text-xs md:text-xs">Climate Control</p>
                 </div>
               </div>
               <div className="p-3 rounded-xl hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <Baby className="w-4 md:w-5 h-4 md:h-5" />
                 <div>
                   <p className="font-semibold text-gray-800">Child Seat</p>
-                  <p className="text-gray-500 text-[8px] md:text-xs">Available</p>
+                  <p className="text-gray-500 text-xs md:text-xs">Available</p>
                 </div>
               </div>
               <div className="p-3 rounded-xl hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <Luggage className="w-4 md:w-5 h-4 md:h-5" />
                 <div>
                   <p className="font-semibold text-gray-800">Luggage</p>
-                  <p className="text-gray-500 text-[8px] md:text-xs">Large Space</p>
+                  <p className="text-gray-500 text-xs md:text-xs">Large Space</p>
                 </div>
               </div>
               <div className="p-3 rounded-xl hover:shadow-md transition-all duration-300 hover:scale-105 flex items-center gap-2">
                 <Key className="w-4 md:w-5 h-4 md:h-5" />
                 <div>
                   <p className="font-semibold text-gray-800">Keyless</p>
-                  <p className="text-gray-500 text-[8px] md:text-xs">Entry</p>
+                  <p className="text-gray-500 text-xs md:text-xs">Entry</p>
                 </div>
               </div>
             </div>
@@ -262,16 +262,16 @@ export default function CarDetails() {
 
             {/* TRIP DETAILS */}
             <div className="bg-white rounded-[26px] p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <h3 className="font-semibold mb-4 md:mb-6 text-[10px] md:text-base bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Your trip</h3>
+              <h3 className="font-semibold mb-4 md:mb-6 text-xs md:text-base bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Your trip</h3>
 
-              <div className="grid grid-cols-2 gap-y-4 md:gap-y-6 gap-x-4 md:gap-x-6 text-[9px] md:text-sm">
+              <div className="grid grid-cols-2 gap-y-4 md:gap-y-6 gap-x-4 md:gap-x-6 text-xs md:text-sm">
                 <div>
                   <p className="font-medium mb-2">Pick Up Location</p>
                   <input
                     type="text"
                     value={pickUpLocation}
                     onChange={(e) => setPickUpLocation(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-[10px] md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
                 <div>
@@ -280,7 +280,7 @@ export default function CarDetails() {
                     type="text"
                     value={dropOffLocation}
                     onChange={(e) => setDropOffLocation(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-[10px] md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
 
@@ -290,7 +290,7 @@ export default function CarDetails() {
                     type="date"
                     value={pickUpDate}
                     onChange={(e) => setPickUpDate(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-[10px] md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
                 <div>
@@ -299,7 +299,7 @@ export default function CarDetails() {
                     type="date"
                     value={dropOffDate}
                     onChange={(e) => setDropOffDate(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-[10px] md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
 
@@ -309,7 +309,7 @@ export default function CarDetails() {
                     type="time"
                     value={pickUpTime}
                     onChange={(e) => setPickUpTime(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-[10px] md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
                 <div>
@@ -318,7 +318,7 @@ export default function CarDetails() {
                     type="time"
                     value={dropOffTime}
                     onChange={(e) => setDropOffTime(e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-[10px] md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
 
@@ -330,7 +330,7 @@ export default function CarDetails() {
                     onChange={(e) => setNumberOfPersons(e.target.value)}
                     min="1"
                     max="20"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-[10px] md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
                 <div>
@@ -341,7 +341,7 @@ export default function CarDetails() {
                     onChange={(e) => setCarSeats(e.target.value)}
                     min="2"
                     max="20"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-[10px] md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg text-xs md:text-sm text-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
                   />
                 </div>
               </div>
@@ -349,9 +349,9 @@ export default function CarDetails() {
 
             {/* PRICE DETAILS */}
             <div className="bg-white rounded-[26px] p-6 md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100">
-              <h3 className="font-semibold mb-4 md:mb-6 text-[10px] md:text-base bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Price Details</h3>
+              <h3 className="font-semibold mb-4 md:mb-6 text-xs md:text-base bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">Price Details</h3>
 
-              <div className="space-y-3 md:space-y-4 text-[9px] md:text-sm">
+              <div className="space-y-3 md:space-y-4 text-xs md:text-sm">
                 <div className="flex justify-between hover:bg-blue-50 p-2 rounded-lg transition-all duration-300">
                   <span>Total Rent x {calculateDays()} Day{calculateDays() > 1 ? 's' : ''}</span>
                   <span className="font-semibold">Rs.{rentPerDay * calculateDays()}</span>
@@ -368,7 +368,7 @@ export default function CarDetails() {
 
               <button 
   onClick={() => navigate('/checkout')}
-  className="mt-6 md:mt-8 w-full bg-gradient-to-r from-[#3F00FF] to-[#1CA8CB] py-2.5 md:py-3 rounded-full font-semibold text-[10px] md:text-base hover:from-green-400 hover:to-cyan-400 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 text-white">
+  className="mt-6 md:mt-8 w-full bg-gradient-to-r from-[#3F00FF] to-[#1CA8CB] py-2.5 md:py-3 rounded-full font-semibold text-xs md:text-base hover:from-green-400 hover:to-cyan-400 transition-all duration-300 hover:scale-105 hover:shadow-xl active:scale-95 text-white">
   BOOK NOW
 </button>
             </div>
@@ -378,11 +378,11 @@ export default function CarDetails() {
 
         {/* FEATURES */}
         <div className="mt-8 md:mt-12 bg-gray-50 border-l-4 border-blue-700 rounded-xl p-6 md:p-10">
-          <h3 className="font-semibold mb-4 md:mb-6 text-[10px] md:text-base text-gray-900">
+          <h3 className="font-semibold mb-4 md:mb-6 text-xs md:text-base text-gray-900">
             Vehicle Features
           </h3>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 text-[9px] md:text-sm">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 text-xs md:text-sm">
             <div>
               <p className="font-medium mb-2 md:mb-3 text-gray-800">Safety</p>
               <ul className="space-y-1 md:space-y-2 text-gray-600">
@@ -398,7 +398,7 @@ export default function CarDetails() {
                 <li>AUX Input</li>
                 <li>Bluetooth</li>
                 <li>Device Charging</li>
-                <li><Wifi className="inline w-3 md:w-4 h-3 md:h-4 mr-1" /> WiFi Hotspot</li>
+                <li><Wifi className="inline w-3.5 md:w-4 h-3.5 md:h-4 mr-1" /> WiFi Hotspot</li>
               </ul>
             </div>
 
@@ -408,15 +408,15 @@ export default function CarDetails() {
                 <li>Seat Ventilation</li>
                 <li>Temperature Control</li>
                 <li>Cushioned Seats</li>
-                <li>Pet Friendly <PawPrint className="inline w-3 md:w-4 h-3 md:h-4 ml-1" /></li>
+                <li>Pet Friendly <PawPrint className="inline w-3.5 md:w-4 h-3.5 md:h-4 ml-1" /></li>
               </ul>
             </div>
 
             <div>
               <p className="font-medium mb-3 text-gray-800">Add-ons</p>
               <ul className="space-y-2 text-gray-600">
-                <li><LifeBuoy className="inline w-3 md:w-4 h-3 md:h-4 mr-1" /> Roadside Assistance</li>
-                <li><HeartHandshake className="inline w-3 md:w-4 h-3 md:h-4 mr-1" /> 24/7 Support</li>
+                <li><LifeBuoy className="inline w-3.5 md:w-4 h-3.5 md:h-4 mr-1" /> Roadside Assistance</li>
+                <li><HeartHandshake className="inline w-3.5 md:w-4 h-3.5 md:h-4 mr-1" /> 24/7 Support</li>
               </ul>
             </div>
           </div>
@@ -426,41 +426,41 @@ export default function CarDetails() {
 
         {/* CUSTOMER REVIEWS */}
         <div className="mt-12">
-          <h3 className="font-semibold mb-4 md:mb-6 text-[10px] md:text-base">Customer Reviews</h3>
+          <h3 className="font-semibold mb-4 md:mb-6 text-xs md:text-base">Customer Reviews</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10">
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <div className="flex items-center gap-2 mb-2 text-[9px] md:text-sm"><Star className="w-3 md:w-4 h-3 md:h-4 text-yellow-400" /> 5.0</div>
-              <p className="text-gray-700 mb-2 text-[9px] md:text-sm">"Amazing ride! The car was super clean and comfortable. Highly recommend."</p>
-              <span className="text-[8px] md:text-xs text-gray-500">- Priya S.</span>
+              <div className="flex items-center gap-2 mb-2 text-xs md:text-sm"><Star className="w-3.5 md:w-4 h-3.5 md:h-4 text-yellow-400" /> 5.0</div>
+              <p className="text-gray-700 mb-2 text-xs md:text-sm">"Amazing ride! The car was super clean and comfortable. Highly recommend."</p>
+              <span className="text-xs md:text-xs text-gray-500">- Priya S.</span>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <div className="flex items-center gap-2 mb-2 text-[9px] md:text-sm"><Star className="w-3 md:w-4 h-3 md:h-4 text-yellow-400" /> 4.8</div>
-              <p className="text-gray-700 mb-2 text-[9px] md:text-sm">"Bluetooth and WiFi made our trip so much easier. Great service!"</p>
-              <span className="text-[8px] md:text-xs text-gray-500">- Rahul V.</span>
+              <div className="flex items-center gap-2 mb-2 text-xs md:text-sm"><Star className="w-3.5 md:w-4 h-3.5 md:h-4 text-yellow-400" /> 4.8</div>
+              <p className="text-gray-700 mb-2 text-xs md:text-sm">"Bluetooth and WiFi made our trip so much easier. Great service!"</p>
+              <span className="text-xs md:text-xs text-gray-500">- Rahul V.</span>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-md">
-              <div className="flex items-center gap-2 mb-2 text-[9px] md:text-sm"><Star className="w-3 md:w-4 h-3 md:h-4 text-yellow-400" /> 4.9</div>
-              <p className="text-gray-700 mb-2 text-[9px] md:text-sm">"Roadside assistance was prompt and helpful. Will book again!"</p>
-              <span className="text-[8px] md:text-xs text-gray-500">- Anita P.</span>
+              <div className="flex items-center gap-2 mb-2 text-xs md:text-sm"><Star className="w-3.5 md:w-4 h-3.5 md:h-4 text-yellow-400" /> 4.9</div>
+              <p className="text-gray-700 mb-2 text-xs md:text-sm">"Roadside assistance was prompt and helpful. Will book again!"</p>
+              <span className="text-xs md:text-xs text-gray-500">- Anita P.</span>
             </div>
           </div>
         </div>
 
         {/* FAQ SECTION */}
         <div className="mt-12">
-          <h3 className="font-semibold mb-4 md:mb-6 text-[10px] md:text-base">Frequently Asked Questions</h3>
+          <h3 className="font-semibold mb-4 md:mb-6 text-xs md:text-base">Frequently Asked Questions</h3>
           <div className="space-y-4">
             <div className="bg-white rounded-xl p-4 shadow">
-              <div className="flex items-center gap-2 mb-2 text-[9px] md:text-sm"><HelpCircle className="w-3 md:w-4 h-3 md:h-4 text-blue-400" /> <span className="font-medium">Is fuel included in the rental price?</span></div>
-              <p className="text-gray-600 text-[8px] md:text-xs">No, fuel charges are extra and based on usage.</p>
+              <div className="flex items-center gap-2 mb-2 text-xs md:text-sm"><HelpCircle className="w-3.5 md:w-4 h-3.5 md:h-4 text-blue-400" /> <span className="font-medium">Is fuel included in the rental price?</span></div>
+              <p className="text-gray-600 text-xs md:text-xs">No, fuel charges are extra and based on usage.</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow">
-              <div className="flex items-center gap-2 mb-2 text-[9px] md:text-sm"><HelpCircle className="w-3 md:w-4 h-3 md:h-4 text-blue-400" /> <span className="font-medium">Can I bring my pet?</span></div>
-              <p className="text-gray-600 text-[8px] md:text-xs">Yes, our cars are pet-friendly. Please mention while booking.</p>
+              <div className="flex items-center gap-2 mb-2 text-xs md:text-sm"><HelpCircle className="w-3.5 md:w-4 h-3.5 md:h-4 text-blue-400" /> <span className="font-medium">Can I bring my pet?</span></div>
+              <p className="text-gray-600 text-xs md:text-xs">Yes, our cars are pet-friendly. Please mention while booking.</p>
             </div>
             <div className="bg-white rounded-xl p-4 shadow">
-              <div className="flex items-center gap-2 mb-2 text-[9px] md:text-sm"><HelpCircle className="w-3 md:w-4 h-3 md:h-4 text-blue-400" /> <span className="font-medium">What if I need help during my trip?</span></div>
-              <p className="text-gray-600 text-[8px] md:text-xs">We offer 24/7 roadside assistance and customer support.</p>
+              <div className="flex items-center gap-2 mb-2 text-xs md:text-sm"><HelpCircle className="w-3.5 md:w-4 h-3.5 md:h-4 text-blue-400" /> <span className="font-medium">What if I need help during my trip?</span></div>
+              <p className="text-gray-600 text-xs md:text-xs">We offer 24/7 roadside assistance and customer support.</p>
             </div>
           </div>
         </div>

@@ -127,7 +127,7 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
       {/* ================= LOCAL TRIP ================= */}
       {currentTab === "Local Trip" && (
         <>
-          <div className="flex gap-4 md:gap-8 mb-3 md:mb-4 text-[10px] md:text-sm font-semibold">
+          <div className="flex gap-4 md:gap-8 mb-3 md:mb-4 text-xs md:text-sm font-semibold">
             <span
               onClick={() => setTripType("One-Way")}
               className={`cursor-pointer pb-2 ${
@@ -169,7 +169,7 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
                   onClick={() => setSelectedRoundTrip(opt.id)}
                   className={cardStyle(selectedRoundTrip === opt.id)}
                 >
-                  <div className="flex justify-between text-[10px] md:text-sm">
+                  <div className="flex justify-between text-xs md:text-sm">
                     <span>{opt.depart}</span>
                     <span>{opt.return}</span>
                   </div>
@@ -271,7 +271,7 @@ function FormGrid({ children }) {
 function InputBox({ label, icon: Icon, value, setValue, list, showList, setShowList }) {
   return (
     <div className="relative">
-      <label className="text-[10px] md:text-xs flex items-center gap-1 text-gray-500">
+      <label className="text-xs md:text-xs flex items-center gap-1 text-gray-500">
         <Icon className="w-2.5 md:w-3 h-2.5 md:h-3 text-[#4B0082]" /> {label}
       </label>
       <input
@@ -307,7 +307,7 @@ function InputBox({ label, icon: Icon, value, setValue, list, showList, setShowL
 function SimpleInput({ label, icon: Icon, type = "text", value, setValue }) {
   return (
     <div>
-      <label className="text-[10px] md:text-xs flex items-center gap-1 text-gray-500">
+      <label className="text-xs md:text-xs flex items-center gap-1 text-gray-500">
         <Icon className="w-2.5 md:w-3 h-2.5 md:h-3 text-[#4B0082]" /> {label}
       </label>
       <input
@@ -324,7 +324,7 @@ function SimpleInput({ label, icon: Icon, type = "text", value, setValue }) {
 function SelectPersons({ persons, setPersons }) {
   return (
     <div>
-      <label className="text-[10px] md:text-xs flex items-center gap-1 text-gray-500">
+      <label className="text-xs md:text-xs flex items-center gap-1 text-gray-500">
         <Users className="w-2.5 md:w-3 h-2.5 md:h-3 text-[#4B0082]" /> Persons
       </label>
       <select

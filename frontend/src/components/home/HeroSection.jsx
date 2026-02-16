@@ -68,7 +68,7 @@ export default function HeroSection({
             </span>
           </h1>
 
-          <p className="text-white/90 text-[10px] md:text-lg lg:text-xl max-w-2xl mx-auto drop-shadow-md font-light leading-relaxed">
+          <p className="text-white/90 text-sm md:text-lg lg:text-xl max-w-2xl mx-auto drop-shadow-md font-light leading-relaxed">
             Discover the world comfortably through expertly planned rides that
             focus on safety, convenience, and unforgettable memories. Whether you're traveling for business or leisure, our premium services ensure every journey is smooth, reliable, and tailored to your needs. Experience hassle-free transportation with professional drivers and well-maintained vehicles.
           </p>
@@ -117,7 +117,7 @@ export default function HeroSection({
                 <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-[#0892D0]/20 via-[#4B0082]/20 to-[#0892D0]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none -z-10 blur-xl"></div>
               </div>
               {/* Compact status indicator */}
-              <div className="mt-1.5 flex items-center justify-center gap-1 text-white/60 text-[9px] font-medium">
+              <div className="mt-1.5 flex items-center justify-center gap-1 text-white/60 text-xs font-medium">
                 <div className="w-1 h-1 bg-green-400 rounded-full animate-pulse"></div>
                 <span>Select service</span>
               </div>
