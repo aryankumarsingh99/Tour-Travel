@@ -61,7 +61,7 @@ export default function HeroSection({
 
         {/* HERO TEXT */}
         <div className="max-w-4xl">
-          <h1 className="text-lg md:text-6xl font-bold text-white leading-tight mb-3 md:mb-6 drop-shadow-lg font-sans tracking-tight">
+          <h1 className="text-3xl md:text-9xl font-bold text-white leading-tight mb-3 md:mb-6 drop-shadow-lg font-sans tracking-tight">
             Making Every Trip <br />
             <span className="bg-gradient-to-r from-[#0892D0] to-[#4B0082] bg-clip-text text-transparent italic font-black tracking-wide">
               Simple, Safe & Memorable
