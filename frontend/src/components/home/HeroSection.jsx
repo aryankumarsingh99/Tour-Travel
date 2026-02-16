@@ -68,7 +68,7 @@ export default function HeroSection({
             </span>
           </h1>
 
-          <p className="text-white/90 text-sm md:text-lg lg:text-xl max-w-2xl mx-auto drop-shadow-md font-light leading-relaxed">
+          <p className="text-white/90 text-sm md:text-lg lg:text-xl max-w-2xl mx-auto drop-shadow-md font-semibold leading-relaxed">
             Discover the world comfortably through expertly planned rides that
             focus on safety, convenience, and unforgettable memories. Whether you're traveling for business or leisure, our premium services ensure every journey is smooth, reliable, and tailored to your needs. Experience hassle-free transportation with professional drivers and well-maintained vehicles.
           </p>
