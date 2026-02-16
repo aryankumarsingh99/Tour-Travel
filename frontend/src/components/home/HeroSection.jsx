@@ -78,7 +78,7 @@ export default function HeroSection({
         <div className="mt-24 md:mt-28 lg:mt-32 w-full flex justify-center px-4">
           
           {/* Modern Custom Dropdown - Shows on small screens */}
-          <div className="md:hidden w-full max-w-[240px] mb-9">
+          <div className="md:hidden w-full max-w-[240px] mb-30">
             <div className="relative group">
               {/* Custom styled select wrapper */}
               <div className="relative">

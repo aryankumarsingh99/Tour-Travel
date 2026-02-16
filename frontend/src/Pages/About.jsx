@@ -160,7 +160,6 @@ function About() {
 
             <div className="space-y-3 md:space-y-12">
               {milestones.map((m, i) => (
-                <div
                 <div className="bg-white rounded-lg md:rounded-2xl shadow-md md:shadow-xl p-3 md:p-8 border-l-2 md:border-l-4 border-[#0892D0] transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl hover:border-[#4B0082]">
                   <div className="text-sm md:text-2xl font-bold text-[#4B0082] mb-1 md:mb-2">
                     {m.year}
