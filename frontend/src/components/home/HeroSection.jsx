@@ -51,7 +51,7 @@ export default function HeroSection({
         playsInline
         autoPlay
         preload="auto"
-        className={`absolute inset-0 w-full blur-xs h-full object-cover transition-opacity duration-700 ${
+        className={`absolute inset-0 w-full  h-full object-cover transition-opacity duration-700 ${
           fade ? "opacity-100" : "opacity-0"
         }`}
       />
