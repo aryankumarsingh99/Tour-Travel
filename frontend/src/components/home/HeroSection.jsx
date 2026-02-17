@@ -7,11 +7,8 @@ export default function HeroSection({
   onAddStop,
 }) {
   const videos = [
-    // "/hero4.mp4",
       "/hero6.mp4",
       "/hero5.mp4",
-    // "/video.mp4",
-    // "/video4.mp4",
   ];
 
   const videoRef = useRef(null);
@@ -121,7 +118,7 @@ export default function HeroSection({
           {/* MAIN HEADING */}
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-3 md:mb-6 leading-tight">
             <span className="block mb-1 md:mb-2">Travel Smarter,</span>
-            <span className="block bg-gradient-to-r from-[#0892D0] via-[#00D4FF] to-[#4B0082] bg-clip-text text-transparent animate-gradient">
+            <span className="block bg-gradient-to-r from-[#00D4FF] via-[#081ca0] to-[#5cffcb] bg-clip-text text-transparent animate-gradient">
               Journey Better
             </span>
           </h1>
