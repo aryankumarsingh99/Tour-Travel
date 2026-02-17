@@ -51,7 +51,7 @@ export default function HomePage() {
         onAddStop={handleAddStop}
       />
 
-      <div className="relative z-20 -mt-16 sm:-mt-20 md:-mt-24">
+      <div id="booking-form" className="relative z-20 -mt-16 sm:-mt-20 md:-mt-24">
         <BookingCard
           tripType={tripType}
           setTripType={setTripType}
