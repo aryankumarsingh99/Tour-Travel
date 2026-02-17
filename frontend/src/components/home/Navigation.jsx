@@ -24,7 +24,7 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
   return (
     <>
       <nav className="bg-white shadow-md sticky top-0 z-50 border-b border-gray-200">
-        <div className="w-full px-3 py-1.5 md:px-10 md:py-4 flex items-center justify-between">
+        <div className="w-full px-3 py-3 md:px-10 md:py-4 flex items-center justify-between">
 
           {/* LOGO SECTION */}
           <div
@@ -34,7 +34,7 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
             <img
               src={logo}
               alt="Jai Guru Travels Logo"
-              className="w-10 h-8 md:w-16 md:h-16 lg:w-16 lg:h-16 object-contain"
+              className="w-12 h-10 md:w-16 md:h-16 lg:w-16 lg:h-16 object-contain"
             />
 
             
@@ -87,7 +87,7 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
 
       {/* MOBILE MENU - SLIDE DOWN */}
       <div 
-        className={`md:hidden fixed top-[48px] left-1/2 -translate-x-1/2 w-[70%] max-w-xs bg-gradient-to-br from-white via-blue-50 to-purple-50 shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out z-40 ${
+        className={`md:hidden fixed top-[64px] left-1/2 -translate-x-1/2 w-[70%] max-w-xs bg-gradient-to-br from-white via-blue-50 to-purple-50 shadow-lg rounded-lg overflow-hidden transition-all duration-500 ease-in-out z-40 ${
           mobileMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
