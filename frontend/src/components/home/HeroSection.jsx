@@ -7,8 +7,11 @@ export default function HeroSection({
   onAddStop,
 }) {
   const videos = [
-    "/video.mp4",
-    "/video4.mp4",
+    // "/hero4.mp4",
+      "/hero6.mp4",
+      "/hero5.mp4",
+    // "/video.mp4",
+    // "/video4.mp4",
   ];
 
   const videoRef = useRef(null);

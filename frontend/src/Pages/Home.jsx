@@ -117,13 +117,13 @@ export default function HomePage() {
       <section className="relative w-full py-12 md:py-16 overflow-hidden">
 
         <video
-          src="/video5.mp4"
+          src="/hero5.mp4"
           muted
           loop
           autoPlay
           playsInline
           preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover blur-xs "
+          className="absolute inset-0 w-full h-full object-cover  "
         />
 
         <motion.div
