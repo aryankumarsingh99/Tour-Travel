@@ -42,7 +42,7 @@ export default function HeroSection({
   }, [videoIndex]);
 
   return (
-    <section className="relative w-full min-h-[35vh] md:min-h-[45vh] lg:min-h-[65vh] overflow-hidden">
+    <section className="relative w-full min-h-[25vh] md:min-h-[25vh] lg:min-h-[55vh] overflow-hidden">
 
       {/* VIDEO ONLY (NO OVERLAY) */}
       <video
