@@ -64,7 +64,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 md:px-6 text-center">
           
 
-          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-[#0892D0] to-[#4B0082] bg-clip-text text-transparent font-serif tracking-tight">
+          <h2 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 bg-gradient-to-r from-[#0f3890] to-cyan-500 bg-clip-text text-transparent font-serif tracking-tight">
             Discover Amazing Tours & Travel Experiences
           </h2>
 
@@ -106,7 +106,7 @@ export default function HomePage() {
           `}</style>
 
           <Link to="/explore">
-            <button className="glow-explore-btn bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white px-3 md:px-4 py-2 md:py-3 text-xs md:text-base rounded-full font-semibold hover:scale-105 transition duration-300 shadow-xl">
+            <button className="glow-explore-btn bg-gradient-to-r from-[#0f3890] to-cyan-500 text-white px-3 md:px-4 py-2 md:py-3 text-xs md:text-base rounded-full font-semibold hover:scale-105 transition duration-300 shadow-xl">
               Explore More
             </button>
           </Link>

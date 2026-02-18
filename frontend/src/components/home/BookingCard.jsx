@@ -248,7 +248,7 @@ export default function BookingCard({ tripType, setTripType, activeTab }) {
       <div className="mt-4 md:mt-6 flex justify-end">
         <button
           onClick={goToCheckout}
-          className="glow-book-btn px-4 md:px-5 py-1.5 md:py-2 text-xs md:text-base bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300"
+          className="glow-book-btn px-4 md:px-5 py-1.5 md:py-2 text-xs md:text-base bg-gradient-to-r from-[#0f3890] to-cyan-500 text-white rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300"
         >
           Book Now
         </button>

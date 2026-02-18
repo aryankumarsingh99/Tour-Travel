@@ -109,7 +109,7 @@ export default function IndiaTour() {
           >
             <button
               onClick={() => navigate(-1)}
-              className="flex items-center gap-2 text-white/80 hover:text-white mb-4 md:mb-6 text-xs md:text-base transition"
+              className="flex items-center gap-2 bg-gradient-to-r from-[#0f3890] to-cyan-500 text-white mb-4 md:mb-6 text-xs md:text-base rounded-full px-4 py-1 hover:scale-105 transition"
             >
               <ArrowLeft className="w-4 md:w-5 h-4 md:h-5" />
               Back to Services
@@ -164,7 +164,7 @@ export default function IndiaTour() {
                 onClick={() => setViewMode("modern")}
                 className={`flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition ${
                   viewMode === "modern"
-                    ? "bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white shadow-lg"
+                    ? "bg-gradient-to-r from-[#0f3890] to-cyan-500 text-white shadow-lg"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -175,7 +175,7 @@ export default function IndiaTour() {
                 onClick={() => setViewMode("classic")}
                 className={`flex items-center gap-2 px-4 md:px-6 py-2 md:py-3 rounded-full font-semibold transition ${
                   viewMode === "classic"
-                    ? "bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white shadow-lg"
+                    ? "bg-gradient-to-r from-[#0f3890] to-cyan-500 text-white shadow-lg"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -266,7 +266,7 @@ export default function IndiaTour() {
                           e.stopPropagation();
                           setSelectedState(state);
                         }}
-                        className="flex-1 px-3 md:px-4 py-1.5 md:py-2 bg-gray-100 text-gray-700 rounded-full font-semibold text-xs md:text-sm hover:bg-gray-200 transition"
+                        className="flex-1 px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-[#0f3890] to-cyan-500 text-white rounded-full font-semibold text-xs md:text-sm hover:scale-105 transition"
                       >
                         Details
                       </button>
@@ -275,7 +275,7 @@ export default function IndiaTour() {
                           e.stopPropagation();
                           handleBooking(state);
                         }}
-                        className="flex-1 px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white rounded-full font-semibold text-xs md:text-sm hover:shadow-lg hover:scale-105 transition"
+                        className="flex-1 px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-[#0f3890] to-cyan-500 text-white rounded-full font-semibold text-xs md:text-sm hover:scale-105 transition"
                       >
                         Book
                       </button>

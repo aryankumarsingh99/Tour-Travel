@@ -12,12 +12,10 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
 
   const getLinkClasses = (path) => {
     const baseClasses =
-      "flex items-center justify-center px-4 py-2 text-sm rounded-md transition-all duration-300";
-
+      "nav-link flex items-center justify-center px-4 py-2 text-sm rounded-md transition-all duration-300 relative";
     if (isActive(path)) {
-      return `${baseClasses} bg-gradient-to-r from-[#0892D0] to-[#4B0082] bg-clip-text text-transparent font-semibold border-b-2 border-[#0892D0]`;
+      return `${baseClasses} text-[#0892D0] font-semibold active-nav-link`;
     }
-
     return `${baseClasses} text-gray-600 font-medium hover:text-[#0892D0]`;
   };
 
@@ -34,7 +32,7 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
             <img
               src={logo}
               alt="Jai Guru Travels Logo"
-              className="w-12 h-10 md:w-16 md:h-16 lg:w-16 lg:h-16 object-contain"
+              className="w-12 h-10 md:w-16 md:h-16 lg:w-16 lg:h-16 object-contain scale-140 "
             />
 
             
@@ -76,7 +74,7 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
           {/* LOGIN BUTTON */}
           <button
             onClick={() => setLoginModalOpen(true)}
-            className="hidden md:flex items-center justify-center px-6 py-2 rounded-full text-sm font-medium shadow-md bg-gradient-to-r from-[#0892D0] to-[#4B0082] text-white hover:scale-105 transition-all duration-300"
+            className="hidden md:flex items-center justify-center px-6 py-2 rounded-full text-sm font-medium shadow-md bg-gradient-to-r from-[#0f3890] to-cyan-500 text-white hover:scale-105 transition-all duration-300"
           >
             <User className="w-4 h-4 mr-2" />
             Login
@@ -145,6 +143,24 @@ export default function Navigation({ mobileMenuOpen, setMobileMenuOpen, setLogin
             transform: translateY(0);
           }
         }
+        .nav-link::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 3px;
+          background: linear-gradient(90deg, #0892D0 0%, #4B0082 100%);
+          border-radius: 2px;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        .nav-link.active-nav-link::after,
+        .nav-link:hover::after {
+          transform: scaleX(1);
+        }
+        /* underlineGrow keyframes removed, replaced by transition */
       `}</style>
     </>
   );

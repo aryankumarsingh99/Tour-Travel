@@ -1,4 +1,26 @@
 import React, { useEffect, useRef, useState } from "react";
+// Helper for count-up animation
+function useCountUp(to, duration = 1200, decimals = 0) {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    let start = 0;
+    let startTime = null;
+    function animateCount(ts) {
+      if (!startTime) startTime = ts;
+      const progress = Math.min((ts - startTime) / duration, 1);
+      const value = start + (to - start) * progress;
+      setCount(decimals ? value.toFixed(decimals) : Math.floor(value));
+      if (progress < 1) {
+        requestAnimationFrame(animateCount);
+      } else {
+        setCount(decimals ? to.toFixed(decimals) : to);
+      }
+    }
+    requestAnimationFrame(animateCount);
+    // eslint-disable-next-line
+  }, [to, duration, decimals]);
+  return count;
+}
 import { MapPin, Car, Plane, Route, ChevronDown, Sparkles, Shield, Clock } from "lucide-react";
 
 export default function HeroSection({
@@ -7,14 +29,16 @@ export default function HeroSection({
   onAddStop,
 }) {
   const videos = [
-      "/hero6.mp4",
-      "/hero5.mp4",
+     "/kedarnath4.mp4",
+     "/kedarnath.mp4",
+      
   ];
 
   const videoRef = useRef(null);
   const hasScrolledRef = useRef(false);
   const [videoIndex, setVideoIndex] = useState(0);
-  const [fade, setFade] = useState(true);
+  const [prevVideoIndex, setPrevVideoIndex] = useState(null);
+  const [isSliding, setIsSliding] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -26,31 +50,33 @@ export default function HeroSection({
     if (!video) return;
 
     const playNext = () => {
-      setFade(false);
+      setIsSliding(true);
+      setPrevVideoIndex(videoIndex);
       setTimeout(() => {
         setVideoIndex((prev) => (prev + 1) % videos.length);
-        setFade(true);
-      }, 600);
+        setIsSliding(false);
+      }, 700);
     };
 
     video.addEventListener("ended", playNext);
     return () => video.removeEventListener("ended", playNext);
-  }, []);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.src = videos[videoIndex];
-    video.load();
-    video.play().catch(() => {});
   }, [videoIndex]);
 
+  useEffect(() => {
+    if (!isSliding) {
+      const video = videoRef.current;
+      if (!video) return;
+      video.src = videos[videoIndex];
+      video.load();
+      video.play().catch(() => {});
+    }
+  }, [videoIndex, isSliding]);
+
   const tabConfig = [
-    { name: "Local Trip", icon: MapPin, color: "from-blue-500 to-cyan-500" },
-    { name: "Taxi Packages", icon: Car, color: "from-purple-500 to-pink-500" },
-    { name: "Airport Transfer", icon: Plane, color: "from-indigo-500 to-blue-500" },
-    { name: "Multiway", icon: Route, color: "from-emerald-500 to-teal-500" },
+    { name: "Local Trip", icon: MapPin, color: "from-[#0f3890] to-cyan-500" },
+    { name: "Taxi Packages", icon: Car, color: "from-[#0f3890] to-cyan-500" },
+    { name: "Airport Transfer", icon: Plane, color: "from-[#0f3890] to-cyan-500" },
+    { name: "Multiway", icon: Route, color: "from-[#0f3890] to-cyan-500" },
   ];
 
   const scrollToBooking = () => {
@@ -68,29 +94,36 @@ export default function HeroSection({
   return (
     <section className="relative w-full min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] overflow-hidden bg-gradient-to-b from-black/10 to-black/30">
       
-      {/* VIDEO BACKGROUND */}
-      <video
-        ref={videoRef}
-        muted
-        playsInline
-        autoPlay
-        preload="auto"
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ${
-          fade ? "opacity-100" : "opacity-0"
-        }`}
-      />
+      {/* VIDEO BACKGROUND WITH SLIDE ANIMATION */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        {/* Previous video slides out to right */}
+        {isSliding && prevVideoIndex !== null && (
+          <video
+            key={prevVideoIndex}
+            src={videos[prevVideoIndex]}
+            muted
+            playsInline
+            autoPlay
+            preload="auto"
+            className="absolute inset-0 w-full h-full object-cover video-slide-out"
+          />
+        )}
+        {/* Current video slides in from left */}
+        <video
+          ref={videoRef}
+          muted
+          playsInline
+          autoPlay
+          preload="auto"
+          className={`absolute inset-0 w-full h-full object-cover ${isSliding ? 'video-slide-in' : 'video-still'}`}
+        />
+      </div>
 
       {/* MODERN GRADIENT OVERLAY */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
       <div className="absolute inset-0 bg-gradient-to-r from-[#0892D0]/10 via-transparent to-[#4B0082]/10" />
 
-      {/* ANIMATED PARTICLES EFFECT */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-20 left-10 w-2 h-2 bg-white rounded-full animate-pulse" />
-        <div className="absolute top-40 right-20 w-3 h-3 bg-cyan-400 rounded-full animate-ping" style={{ animationDuration: '3s' }} />
-        <div className="absolute bottom-32 left-1/4 w-2 h-2 bg-purple-400 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
-        <div className="absolute top-60 right-1/3 w-1 h-1 bg-white rounded-full animate-ping" style={{ animationDuration: '4s' }} />
-      </div>
+      
 
       {/* MAIN CONTENT */}
       <div className="relative z-10 flex flex-col items-center justify-center min-h-[60vh] md:min-h-[75vh] lg:min-h-[85vh] px-4 sm:px-6 lg:px-8 py-8 md:py-0">
@@ -205,17 +238,23 @@ export default function HeroSection({
           {/* CTA STATS */}
           <div className="flex items-center justify-center gap-4 md:gap-8 text-white/80 text-sm">
             <div className="flex flex-col items-center">
-              <div className="text-lg md:text-2xl font-bold text-white">50K+</div>
+              <div className="text-lg md:text-2xl font-bold text-white">
+                {useCountUp(50, 7000)}K+
+              </div>
               <div className="text-[10px] md:text-xs">Customers</div>
             </div>
             <div className="w-px h-8 md:h-10 bg-white/20" />
             <div className="flex flex-col items-center">
-              <div className="text-lg md:text-2xl font-bold text-white">500+</div>
+              <div className="text-lg md:text-2xl font-bold text-white">
+                {useCountUp(500, 7000)}+
+              </div>
               <div className="text-[10px] md:text-xs">Drivers</div>
             </div>
             <div className="w-px h-8 md:h-10 bg-white/20" />
             <div className="flex flex-col items-center">
-              <div className="text-lg md:text-2xl font-bold text-white">4.9★</div>
+              <div className="text-lg md:text-2xl font-bold text-white">
+                {useCountUp(4.9, 7000, 1)}★
+              </div>
               <div className="text-[10px] md:text-xs">Rating</div>
             </div>
           </div>
@@ -226,6 +265,35 @@ export default function HeroSection({
       <div className="absolute bottom-0 left-0 right-0 h-7 bg-gradient-to-t from-white to-transparent" />
       
       <style jsx>{`
+                .video-slide-in {
+                  animation: slideInLeft 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+                }
+                .video-slide-out {
+                  animation: slideOutRight 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+                }
+                .video-still {
+                  opacity: 1;
+                }
+                @keyframes slideInLeft {
+                  from {
+                    transform: translateX(-100%);
+                    opacity: 1;
+                  }
+                  to {
+                    transform: translateX(0);
+                    opacity: 1;
+                  }
+                }
+                @keyframes slideOutRight {
+                  from {
+                    transform: translateX(0);
+                    opacity: 1;
+                  }
+                  to {
+                    transform: translateX(100%);
+                    opacity: 1;
+                  }
+                }
         @keyframes gradient {
           0%, 100% { background-position: 0% 70%; }
           50% { background-position: 100% 50%; }
